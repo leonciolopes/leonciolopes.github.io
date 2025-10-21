@@ -39,8 +39,8 @@ import {
 // ==========================
 const LOGO_TEXT = "Mandato Cidadao"; // texto alternativo
 // Image paths (put real files in /public/img)
-const LOGO_SRC_WHITE = "/img/logo-leoncio-white.png"; // header logo white
-const LOGO_SRC_BLACK = "/img/logo-leoncio-black.png"; // footer logo black
+const LOGO_SRC_WHITE = "./assets/img/logo-leoncio-white.png"; // header logo white
+const LOGO_SRC_BLACK = "./assets/img/logo-leoncio-black.png"; // footer logo black
 
 // WhatsApp numbers (digits only with country and area code)
 const WHATSAPP_NUMBER = "5531995874822"; // floating button and main contact
