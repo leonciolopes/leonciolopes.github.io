@@ -34,13 +34,16 @@ import {
   Mail,
 } from "lucide-react";
 
+import logoWhite from "./assets/img/logo-leoncio-white.png";
+import logoBlack from "./assets/img/logo-leoncio-black.png";
+
 // ==========================
 // CONFIG & CONSTANTS
 // ==========================
 const LOGO_TEXT = "Mandato Cidadao"; // texto alternativo
 // Image paths (put real files in /public/img)
-const LOGO_SRC_WHITE = "./assets/img/logo-leoncio-white.png"; // header logo white
-const LOGO_SRC_BLACK = "./assets/img/logo-leoncio-black.png"; // footer logo black
+const LOGO_SRC_WHITE = logoWhite;
+const LOGO_SRC_BLACK = logoBlack;
 
 // WhatsApp numbers (digits only with country and area code)
 const WHATSAPP_NUMBER = "5531995874822"; // floating button and main contact
