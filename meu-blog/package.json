@@ -1,8 +1,8 @@
 {
-  "name": "leonciolopes-blog",
+  "name": "leonciolopes",
   "private": true,
   "version": "1.0.0",
-  "homepage": "https://leonciolopes2528.github.io/leonciolopes-blog/",
+  "homepage": "https://leonciolopes2528.github.io/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -20,7 +20,7 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.0",
     "autoprefixer": "^10.4.21",
-    "gh-pages": "^6.0.0",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.18",
     "vite": "^5.4.0"
