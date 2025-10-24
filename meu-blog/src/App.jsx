@@ -40,7 +40,7 @@ import logoBlack from "./assets/img/logo-leoncio-black.png";
 // ==========================
 // CONFIG & CONSTANTS
 // ==========================
-const LOGO_TEXT = "Mandato Cidadao"; // texto alternativo
+const LOGO_TEXT = "Mandato Cidadão"; // texto alternativo
 // Image paths (put real files in /public/img)
 const LOGO_SRC_WHITE = logoWhite;
 const LOGO_SRC_BLACK = logoBlack;
@@ -59,17 +59,17 @@ const OFFICE_ADDRESS =
 // Categories and sample data
 const categorias = [
   "Infraestrutura",
-  "Saude",
-  "Educacao",
+  "Saúde",
+  "Educação",
   "Mobilidade",
   "Meio Ambiente",
-  "Seguranca",
+  "Segurança",
 ];
 
 const pautasData = [
   {
     id: 1,
-    title: "Revitalizacao da Praca do Bairro Canada",
+    title: "Revitalização da Praça do Bairro Canadá",
     category: "Infraestrutura",
     publishDate: "2025-09-12",
     excerpt:
@@ -77,8 +77,8 @@ const pautasData = [
   },
   {
     id: 2,
-    title: "Mutirao de Oftalmologia Gratuita",
-    category: "Saude",
+    title: "Mutirão de Oftalmologia Gratuita",
+    category: "Saúde",
     publishDate: "2025-10-01",
     excerpt:
       "Organizacao de consultas oftalmologicas gratuitas e encaminhamentos.",
