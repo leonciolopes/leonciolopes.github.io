@@ -2,13 +2,172 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Ajustes mínimos opcionais para casar com o app */
-html,
-body,
-#root {
-  height: 100%;
+/* ===============================
+   GLOBAL RESET & BASE STYLES
+================================= */
+:root {
+  --color-primary: #2563eb; /* azul principal */
+  --color-secondary: #10b981; /* verde */
+  --color-text: #1f2937; /* cinza escuro */
+  --color-bg: #f9fafb; /* cinza claro */
+  --color-accent: #047857; /* verde escuro */
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
 }
+
+html,
 body {
-  @apply bg-slate-100 text-slate-900;
   margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  scroll-behavior: smooth;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===============================
+   HEADER
+================================= */
+header {
+  background-color: var(--color-primary);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+header a {
+  color: white;
+  font-weight: 500;
+}
+
+header a:hover {
+  color: #d1fae5;
+}
+
+/* ===============================
+   BUTTONS
+================================= */
+button,
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.6em 1.2em;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* ===============================
+   CARDS & COMPONENTS
+================================= */
+.card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* ===============================
+   FOOTER
+================================= */
+footer {
+  background-color: #1f2937;
+  color: #d1d5db;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+footer a {
+  color: #93c5fd;
+}
+
+footer a:hover {
+  color: white;
+}
+
+/* ===============================
+   WHATSAPP FLOAT BUTTON
+================================= */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  z-index: 100;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* ===============================
+   RESPONSIVE UTILITIES
+================================= */
+@media (max-width: 768px) {
+  header nav {
+    display: none;
+  }
+  .btn {
+    font-size: 0.9rem;
+  }
+  footer {
+    font-size: 0.9rem;
+  }
 }
