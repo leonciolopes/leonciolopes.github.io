@@ -15,6 +15,18 @@ import PageTitle from "../components/ui/PageTitle.jsx";
 
 import fotoLeoncio from "../assets/img/foto-leoncio.png";
 
+// Importa automaticamente todas as imagens da pasta galeria
+// Coloque suas imagens em: src/assets/img/galeria
+const galleryImports = import.meta.glob(
+  "../assets/img/galeria/**/*.{jpg,jpeg,png,webp}",
+  { eager: true, import: "default" }
+);
+
+// Converte o objeto de imports para um array de URLs (e ordena pelo nome do arquivo)
+const galleryImages = Object.entries(galleryImports)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([, url]) => url);
+
 export default function SobrePage() {
   const valores = [
     {
@@ -89,6 +101,7 @@ export default function SobrePage() {
           </div>
         </div>
 
+        {/* Linha do tempo */}
         <div className="mt-8">
           <h3 className="mb-4 text-lg font-semibold text-slate-900">
             Linha do tempo
@@ -109,6 +122,7 @@ export default function SobrePage() {
           </div>
         </div>
 
+        {/* Princípios e valores */}
         <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
           {valores.map((p) => (
             <Card key={p.title}>
@@ -122,6 +136,29 @@ export default function SobrePage() {
             </Card>
           ))}
         </div>
+
+        {/* Galeria de fotos */}
+        {galleryImages.length > 0 && (
+          <div className="mt-10">
+            <h3 className="mb-4 text-lg font-semibold text-slate-900">
+              Galeria
+            </h3>
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+              {galleryImages.map((src, idx) => (
+                <div
+                  key={src + idx}
+                  className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow"
+                >
+                  <img
+                    src={src}
+                    alt={`Foto ${idx + 1}`}
+                    className="h-full w-full object-cover transition hover:scale-105"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </Container>
     </div>
   );
