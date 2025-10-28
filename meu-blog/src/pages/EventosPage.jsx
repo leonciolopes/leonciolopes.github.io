@@ -5,7 +5,7 @@ import Container from "../components/ui/Container";
 import PageTitle from "../components/ui/PageTitle";
 import Card from "../components/ui/Card";
 import Badge from "../components/ui/Badge";
-import { eventosData } from "../data/eventosData";
+import { eventosData } from "../data/eventosData.js";
 
 export default function EventosPage() {
   return (

@@ -7,7 +7,7 @@ import Card from "../components/ui/Card";
 import Badge from "../components/ui/Badge";
 import FilterBar from "../components/ui/FilterBar";
 import PagedList from "../components/ui/PagedList";
-import { pautasData } from "../data/pautasData";
+import { pautasData } from "../data/pautasData.js";
 import useFilteredPosts from "../hooks/useFilteredPosts";
 
 export default function PautasPage() {

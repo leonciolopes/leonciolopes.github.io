@@ -4,7 +4,7 @@ import { Calendar } from "lucide-react";
 import Container from "../components/ui/Container";
 import PageTitle from "../components/ui/PageTitle";
 import Card from "../components/ui/Card";
-import { eventosData } from "../data/eventosData";
+import { eventosData } from "../data/eventosData.js";
 
 export default function EventoDetalhe() {
   const { id } = useParams();

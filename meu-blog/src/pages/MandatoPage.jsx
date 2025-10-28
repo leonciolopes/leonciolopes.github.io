@@ -5,8 +5,8 @@ import Container from "../components/ui/Container";
 import PageTitle from "../components/ui/PageTitle";
 import Card from "../components/ui/Card";
 import Badge from "../components/ui/Badge";
-import { pautasData } from "../data/pautasData";
-import { projetosLeiData } from "../data/projetosLeiData";
+import { pautasData } from "../data/pautasData.js";
+import { projetosLeiData } from "../data/projetosLeiData.js";
 
 export default function MandatoPage() {
   return (

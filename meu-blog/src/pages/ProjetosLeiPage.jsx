@@ -10,7 +10,7 @@ import FilterBar from "../components/ui/FilterBar.jsx";
 import PagedList from "../components/ui/PagedList.jsx";
 
 import useFilteredPosts from "../hooks/useFilteredPosts.js";
-import projetosLeiData from "../data/projetosLeiData.js";
+import { projetosLeiData } from "../data/projetosLeiData.js";
 
 export default function ProjetosLeiPage() {
   const f = useFilteredPosts(projetosLeiData);

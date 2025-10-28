@@ -1,5 +1,5 @@
 // src/data/eventosData.js
-const eventosData = [
+export const eventosData = [
   {
     id: "e1",
     title: "Consultas Oftalmológicas Gratuitas",
@@ -18,5 +18,3 @@ const eventosData = [
       "Atividades recreativas, suporte básico e articulação com serviços públicos.",
   },
 ];
-
-export default eventosData;

@@ -1,5 +1,5 @@
 // src/data/projetosLeiData.js
-const projetosLeiData = [
+export const projetosLeiData = [
   {
     id: 101,
     title: "PL 021/2025 - Programa de Arborização Urbana",
@@ -24,5 +24,3 @@ const projetosLeiData = [
     excerpt: "Cria painéis públicos com cronograma e orçamento de obras.",
   },
 ];
-
-export default projetosLeiData;

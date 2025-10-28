@@ -1,5 +1,5 @@
 // src/data/pautasData.js
-const pautasData = [
+export const pautasData = [
   {
     id: 1,
     title: "Revitalização da Praça do Bairro Canadá",
@@ -24,5 +24,3 @@ const pautasData = [
     excerpt: "Segurança viária para estudantes e pedestres da região.",
   },
 ];
-
-export default pautasData;
