@@ -13,7 +13,7 @@ import Container from "../components/ui/Container.jsx";
 import Card from "../components/ui/Card.jsx";
 import PageTitle from "../components/ui/PageTitle.jsx";
 
-import fotoLeoncio from "../assets/img/foto-leoncio.jpg";
+import fotoLeoncio from "../assets/img/foto-leoncio.png";
 
 export default function SobrePage() {
   const valores = [
