@@ -18,7 +18,7 @@ import fotoLeoncio from "../assets/img/foto-leoncio.png";
 // Importa automaticamente todas as imagens da pasta galeria
 // Coloque suas imagens em: src/assets/img/galeria
 const galleryImports = import.meta.glob(
-  "../assets/img/galeria/**/*.{jpg,jpeg,png,webp}",
+  "../assets/img/**/*.{jpg,jpeg,png,webp}",
   { eager: true, import: "default" }
 );
 
