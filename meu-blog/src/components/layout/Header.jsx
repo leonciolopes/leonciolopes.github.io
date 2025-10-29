@@ -25,11 +25,11 @@ export default function Header() {
     setOpenMandato(false);
   }, [location.pathname]);
 
-  const NavLinkStyled = ({ to, children }) => (
+      const NavLinkStyled = ({ to, children }) => (
     <NavLink
       to={to}
       className={({ isActive }) =>
-        `rounded-xl px-3 py-2 text-sm font-medium transition hover:bg-white/20 ${
+        `rounded-xl px-3 py-2 text-base font-medium transition hover:bg-white/20 ${
           isActive ? "bg-white/20 text-white" : "text-white"
         }`
       }
@@ -39,25 +39,25 @@ export default function Header() {
   );
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-gradient-to-r from-blue-800 to-blue-600 shadow relative">
+    <header className="sticky top-0 z-45 w-full bg-gradient-to-r from-blue-800 to-blue-600 shadow relative">
       {/* Logo positioned at the top-left corner */}
-      <Link
-        to="/"
-        className="absolute left-4 top-3 z-50 flex items-center gap-2"
-        aria-label="Home"
-      >
+        <Link
+          to="/"
+          className="absolute left-10 top-4 z-50 flex items-center gap-2"
+          aria-label="Home"
+        >
         <img
           src={LOGO_SRC_WHITE}
           alt="Logomarca Leoncio Lopes"
-          className="h-15 w-auto object-contain"
+          className="h-11 md:h-12 w-auto object-contain"
         />
         <span className="sr-only">{LOGO_TEXT}</span>
       </Link>
 
       <Container>
-        <div className="flex items-center justify-between py-3">
+          <div className="flex items-center justify-between py-5 md:py-5">
           {/* Spacer where logo used to be to keep layout balanced */}
-          <div className="w-36" />
+          <div className="w-32 md:w-40" />
 
           {/* Desktop nav */}
           <nav className="hidden items-center gap-2 md:flex">
@@ -66,29 +66,32 @@ export default function Header() {
             <div className="relative">
               <button
                 onClick={() => setOpenMandato((o) => !o)}
-                className="flex items-center gap-1 rounded-xl px-3 py-2 text-sm font-medium text-white hover:bg-white/20"
+                className="flex items-center gap-1 rounded-xl px-3 py-2 text-base font-medium text-white hover:bg-white/20"
               >
                 <Layers className="h-4 w-4" /> Mandato
                 <ChevronDown className="h-4 w-4" />
               </button>
               {openMandato && (
-                <div className="absolute right-0 mt-2 w-56 rounded-xl border border-slate-200 bg-white p-2 shadow-lg">
+                <div
+                  className="absolute right-0 mt-2 w-56 rounded-xl border border-slate-200 bg-slate-50 p-2 shadow-lg"
+                  style={{ backgroundColor: "#f8fafc" }}
+                >
                   <Link
-                    className="block rounded-lg px-3 py-2 text-sm hover:bg-slate-50"
-                    to="/mandato"
-                  >
+                      className="block rounded-lg px-3 py-2 text-base text-slate-700 hover:bg-slate-100"
+                      to="/mandato"
+                    >
                     Visão geral
                   </Link>
-                  <Link
-                    className="block rounded-lg px-3 py-2 text-sm hover:bg-slate-50"
-                    to="/mandato/pautas"
-                  >
+                    <Link
+                      className="block rounded-lg px-3 py-2 text-base text-slate-700 hover:bg-slate-100"
+                      to="/mandato/pautas"
+                    >
                     Pautas
                   </Link>
-                  <Link
-                    className="block rounded-lg px-3 py-2 text-sm hover:bg-slate-50"
-                    to="/mandato/projetos-de-lei"
-                  >
+                    <Link
+                      className="block rounded-lg px-3 py-2 text-base text-slate-700 hover:bg-slate-100"
+                      to="/mandato/projetos-de-lei"
+                    >
                     Projetos de Lei
                   </Link>
                 </div>
@@ -102,7 +105,7 @@ export default function Header() {
               href={JORNALZINHO_URL}
               target="_blank"
               rel="noreferrer"
-              className="ml-2 inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-emerald-500"
+              className="ml-2 inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2 text-base font-semibold text-white shadow hover:bg-emerald-500"
             >
               <Newspaper className="h-4 w-4" /> Jornalzinho
               <ExternalLink className="h-4 w-4" />

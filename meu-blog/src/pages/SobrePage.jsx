@@ -82,27 +82,40 @@ export default function SobrePage() {
               <h3 className="text-lg font-semibold text-slate-900">
                 Mini biografia
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-700">
-                Com trajetória marcada pelo empreendedorismo e dedicação,
-                Leôncio Lopes construiu sua carreira em Sete Lagoas no setor da
-                construção civil. Atuando como corretor de imóveis e perito
-                avaliador, acumulou experiência no mercado local e desenvolveu
-                iniciativas voltadas ao desenvolvimento urbano da cidade.
+              <p
+                className="mt-2 text-sm leading-relaxed text-slate-700 text-justify"
+                style={{ textAlign: "justify" }}
+              >
+                Com trajetória marcada pelo empreendedorismo, pela responsabilidade social e pela
+                dedicação ao trabalho, <strong>Leôncio Lopes</strong> construiu sua carreira em
+                <strong> Sete Lagoas</strong> no setor da construção civil. Atuando como corretor
+                de imóveis e perito avaliador, acumulou sólida experiência no mercado local,
+                participando ativamente de projetos que contribuíram para o crescimento urbano e o
+                desenvolvimento econômico da cidade. Seu olhar atento às necessidades da
+                população o motivou a buscar soluções práticas e sustentáveis para os desafios da
+                gestão pública e do desenvolvimento social.
                 <br />
                 <br />
-                Sua vivência no campo desde a juventude e o envolvimento com
-                atividades comerciais moldaram uma visão prática e comprometida
-                com o progresso. No Legislativo, trabalha com foco na
-                valorização do trabalho, no incentivo ao empreendedorismo e no
-                fortalecimento de políticas públicas que promovam qualidade de
-                vida e desenvolvimento sustentável.
+                Desde muito jovem, teve contato direto com o trabalho no campo e com a realidade
+                das famílias trabalhadoras, o que despertou um profundo senso de empatia e
+                compromisso com o bem-estar coletivo. Essa vivência, somada ao espírito
+                empreendedor, moldou uma visão de liderança pautada em resultados e
+                responsabilidade.
+                <br />
+                <br />
+                No <strong>Legislativo municipal</strong>, Leôncio atua com foco na valorização do
+                trabalho, no incentivo ao empreendedorismo, na defesa da transparência e na
+                promoção de políticas públicas que fortaleçam a qualidade de vida e o
+                desenvolvimento sustentável. Seu mandato tem como pilares a proximidade com a
+                população, a escuta ativa e o compromisso de representar com ética e respeito os
+                interesses de Sete Lagoas.
               </p>
             </Card>
           </div>
         </div>
 
-        {/* Linha do tempo */}
-        <div className="mt-8">
+  {/* Linha do tempo (oculta temporariamente) */}
+  <div className="mt-8 hidden">
           <h3 className="mb-4 text-lg font-semibold text-slate-900">
             Linha do tempo
           </h3>

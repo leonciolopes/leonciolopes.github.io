@@ -1,5 +1,5 @@
-import React from "react";
-import { Calendar, ExternalLink } from "lucide-react";
+import React, { useState } from "react";
+import { Calendar, ExternalLink, Users, Package, ChevronDown, ChevronUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import Container from "../components/ui/Container";
 import PageTitle from "../components/ui/PageTitle";
@@ -8,6 +8,12 @@ import Badge from "../components/ui/Badge";
 import { eventosData } from "../data/eventosData.js";
 
 export default function EventosPage() {
+  const [expandedEvent, setExpandedEvent] = useState(null);
+
+  const toggleEvent = (eventId) => {
+    setExpandedEvent(expandedEvent === eventId ? null : eventId);
+  };
+
   return (
     <div className="py-10">
       <Container>
@@ -26,10 +32,15 @@ export default function EventosPage() {
                   </h4>
                   <Badge>{new Date(e.date).toLocaleDateString()}</Badge>
                 </div>
-                <div className="mt-1 text-xs text-slate-600">
+                <div className="mt-1 mb-2 text-xs text-slate-600">
                   Local: {e.local}
                 </div>
                 <p className="mt-2 text-sm text-slate-700">{e.summary}</p>
+                {e.sessions && (
+                  <div className="mt-2 text-xs text-slate-500">
+                    {e.sessions.length} edições anteriores
+                  </div>
+                )}
                 <div className="mt-auto pt-3">
                   <Link
                     to={`/eventos/${e.id}`}

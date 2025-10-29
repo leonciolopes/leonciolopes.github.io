@@ -14,6 +14,9 @@ export const JORNALZINHO_URL = `https://wa.me/${JORNALZINHO_WHATSAPP_NUMBER}`;
 export const OFFICE_ADDRESS =
   "R. Domingos Louverturi, 335 - São Geraldo, Sete Lagoas - MG, 35700-177 | Gabinete 218";
 
+// Plus Code para o gabinete (pode ser usado para centralizar o embed do mapa)
+export const OFFICE_PLUS_CODE = "GQJ3+JM São Geraldo, Sete Lagoas - MG";
+
 export const categorias = [
   "Infraestrutura",
   "Saúde",

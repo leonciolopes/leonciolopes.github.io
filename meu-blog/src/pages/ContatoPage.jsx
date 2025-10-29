@@ -10,7 +10,7 @@ import {
   Mail,
   MessageCircle as WhatsappIcon,
 } from "lucide-react";
-import { OFFICE_ADDRESS, WHATSAPP_NUMBER } from "../data/constants";
+import { OFFICE_ADDRESS, WHATSAPP_NUMBER, OFFICE_PLUS_CODE } from "../data/constants";
 
 export default function ContatoPage() {
   return (
@@ -25,8 +25,8 @@ export default function ContatoPage() {
               <iframe
                 title="Mapa do escritório"
                 src={`https://www.google.com/maps?q=${encodeURIComponent(
-                  OFFICE_ADDRESS
-                )}&output=embed`}
+                  OFFICE_PLUS_CODE
+                )}&z=17&output=embed`}
                 width="100%"
                 height="260"
                 loading="lazy"
