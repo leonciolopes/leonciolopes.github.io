@@ -46,7 +46,7 @@ export default function Header() {
             <img
               src={LOGO_SRC_WHITE}
               alt="Logomarca Leoncio Lopes"
-              className="h-10 w-auto object-contain"
+              className="h-20 w-auto object-contain"
             />
             <span className="sr-only">{LOGO_TEXT}</span>
           </Link>
