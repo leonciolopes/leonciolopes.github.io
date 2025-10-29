@@ -39,17 +39,25 @@ export default function Header() {
   );
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-gradient-to-r from-blue-800 to-blue-600 shadow">
+    <header className="sticky top-0 z-40 w-full bg-gradient-to-r from-blue-800 to-blue-600 shadow relative">
+      {/* Logo positioned at the top-left corner */}
+      <Link
+        to="/"
+        className="absolute left-4 top-3 z-50 flex items-center gap-2"
+        aria-label="Home"
+      >
+        <img
+          src={LOGO_SRC_WHITE}
+          alt="Logomarca Leoncio Lopes"
+          className="h-15 w-auto object-contain"
+        />
+        <span className="sr-only">{LOGO_TEXT}</span>
+      </Link>
+
       <Container>
         <div className="flex items-center justify-between py-3">
-          <Link to="/" className="flex items-center gap-2" aria-label="Home">
-            <img
-              src={LOGO_SRC_WHITE}
-              alt="Logomarca Leoncio Lopes"
-              className="h-20 w-auto object-contain"
-            />
-            <span className="sr-only">{LOGO_TEXT}</span>
-          </Link>
+          {/* Spacer where logo used to be to keep layout balanced */}
+          <div className="w-36" />
 
           {/* Desktop nav */}
           <nav className="hidden items-center gap-2 md:flex">
