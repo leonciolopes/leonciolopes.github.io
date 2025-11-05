@@ -1,6 +1,6 @@
 // src/data/constants.js
-import logoWhite from "../assets/img/logo-leoncio-white.png";
-import logoBlack from "../assets/img/logo-leoncio-black.png";
+import logoWhite from "../assets/img/logos/logo-leoncio-white.png";
+import logoBlack from "../assets/img/logos/logo-leoncio-black.png";
 
 export const LOGO_TEXT = "Mandato Cidadão";
 

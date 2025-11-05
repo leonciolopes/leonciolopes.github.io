@@ -8,6 +8,8 @@ import PautasPage from "../pages/PautasPage.jsx";
 import ProjetosLeiPage from "../pages/ProjetosLeiPage.jsx";
 import EventosPage from "../pages/EventosPage.jsx";
 import EventoDetalhe from "../pages/EventoDetalhe.jsx";
+import FiscalizacoesPage from "../pages/FiscalizacoesPage.jsx";
+import FiscalizacaoDetalhe from "../pages/FiscalizacaoDetalhe.jsx";
 import ContatoPage from "../pages/ContatoPage.jsx";
 
 import PlaceholderPost from "../components/PlaceholderPost.jsx";
@@ -33,9 +35,12 @@ export default function AppRoutes() {
         element={<PlaceholderPost type="pl" />}
       />
 
-      {/* Eventos e Contato */}
-      <Route path="/eventos" element={<EventosPage />} />
-      <Route path="/eventos/:id" element={<EventoDetalhe />} />
+      {/* Eventos e Fiscalizações */}
+  <Route path="/eventos" element={<EventosPage />} />
+  <Route path="/eventos/:id" element={<EventoDetalhe />} />
+  {/* Fiscalizações como subpágina de Mandato */}
+  <Route path="/mandato/fiscalizacoes" element={<FiscalizacoesPage />} />
+  <Route path="/mandato/fiscalizacoes/:id" element={<FiscalizacaoDetalhe />} />
       <Route path="/contato" element={<ContatoPage />} />
 
       {/* Fallback básico */}

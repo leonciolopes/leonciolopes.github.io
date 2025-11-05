@@ -62,15 +62,17 @@ export default function ContatoPage() {
                   @leonciolopes7l
                 </a>
               </li>
-              <li className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-blue-700" /> {OFFICE_ADDRESS}
+              <li className="flex items-start gap-2">
+                <MapPin className="h-5 w-5 flex-shrink-0 text-blue-700 mt-1" />
+                <span className="text-sm text-slate-700">{OFFICE_ADDRESS}</span>
               </li>
-              <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-blue-700" />{" "}
-                <a href="mailto:vereador.leonciolopes@camarasete.mg.gov.br">
-                  vereador.leonciolopes@camarasete.mg.gov.br
-                </a>
-              </li>
+                <li className="flex items-start gap-2">
+                  <Mail className="h-4 w-4 flex-shrink-0 text-blue-700 mt-1" />
+                  <a href="mailto:vereador.leonciolopes@camarasete.mg.gov.br" 
+                     className="break-all hover:text-blue-600">
+                    vereador.leonciolopes@camarasete.mg.gov.br
+                  </a>
+                </li>
             </ul>
           </Card>
         </div>

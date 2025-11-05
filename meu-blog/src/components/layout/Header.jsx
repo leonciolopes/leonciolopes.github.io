@@ -77,23 +77,29 @@ export default function Header() {
                   style={{ backgroundColor: "#f8fafc" }}
                 >
                   <Link
-                      className="block rounded-lg px-3 py-2 text-base text-slate-700 hover:bg-slate-100"
-                      to="/mandato"
-                    >
-                    Visão geral
-                  </Link>
-                    <Link
-                      className="block rounded-lg px-3 py-2 text-base text-slate-700 hover:bg-slate-100"
-                      to="/mandato/pautas"
-                    >
-                    Pautas
-                  </Link>
-                    <Link
-                      className="block rounded-lg px-3 py-2 text-base text-slate-700 hover:bg-slate-100"
-                      to="/mandato/projetos-de-lei"
-                    >
-                    Projetos de Lei
-                  </Link>
+                        className="block rounded-lg px-3 py-2 text-base text-slate-700 hover:bg-slate-100"
+                        to="/mandato"
+                      >
+                      Visão geral
+                    </Link>
+                      <Link
+                        className="block rounded-lg px-3 py-2 text-base text-slate-700 hover:bg-slate-100"
+                        to="/mandato/pautas"
+                      >
+                      Pautas
+                    </Link>
+                      <Link
+                        className="block rounded-lg px-3 py-2 text-base text-slate-700 hover:bg-slate-100"
+                        to="/mandato/projetos-de-lei"
+                      >
+                      Projetos de Lei
+                    </Link>
+                      <Link
+                        className="block rounded-lg px-3 py-2 text-base text-slate-700 hover:bg-slate-100"
+                        to="/mandato/fiscalizacoes"
+                      >
+                      Fiscalizações
+                    </Link>
                 </div>
               )}
             </div>
@@ -112,6 +118,7 @@ export default function Header() {
             </a>
           </nav>
 
+          {/* Mobile menu button */}
           <button
             onClick={() => setOpen((o) => !o)}
             className="rounded-xl p-2 text-white hover:bg-white/20 md:hidden"
@@ -119,6 +126,92 @@ export default function Header() {
             <Menu className="h-6 w-6" />
           </button>
         </div>
+
+        {/* Mobile menu */}
+        {open && (
+          <div className="fixed inset-x-0 top-[85px] z-50 rounded-b-xl bg-white p-4 shadow-lg md:hidden">
+            <nav className="flex flex-col space-y-2">
+              <Link
+                to="/sobre"
+                className="rounded-xl px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-100"
+                onClick={() => setOpen(false)}
+              >
+                Sobre mim
+              </Link>
+
+              <div>
+                <button
+                  onClick={() => setOpenMandato((o) => !o)}
+                  className="flex w-full items-center justify-between rounded-xl px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-100"
+                >
+                  <div className="flex items-center gap-2">
+                    <Layers className="h-4 w-4" /> Mandato
+                  </div>
+                  <ChevronDown className={`h-4 w-4 transform transition-transform ${openMandato ? 'rotate-180' : ''}`} />
+                </button>
+                {openMandato && (
+                  <div className="ml-4 mt-2 space-y-2">
+                    <Link
+                      to="/mandato"
+                      className="block rounded-lg px-3 py-2 text-base text-slate-700 hover:bg-slate-100"
+                      onClick={() => setOpen(false)}
+                    >
+                      Visão geral
+                    </Link>
+                    <Link
+                      to="/mandato/pautas"
+                      className="block rounded-lg px-3 py-2 text-base text-slate-700 hover:bg-slate-100"
+                      onClick={() => setOpen(false)}
+                    >
+                      Pautas
+                    </Link>
+                    <Link
+                      to="/mandato/projetos-de-lei"
+                      className="block rounded-lg px-3 py-2 text-base text-slate-700 hover:bg-slate-100"
+                      onClick={() => setOpen(false)}
+                    >
+                      Projetos de Lei
+                    </Link>
+                    <Link
+                      to="/mandato/fiscalizacoes"
+                      className="block rounded-lg px-3 py-2 text-base text-slate-700 hover:bg-slate-100"
+                      onClick={() => setOpen(false)}
+                    >
+                      Fiscalizações
+                    </Link>
+                  </div>
+                )}
+              </div>
+
+              <Link
+                to="/eventos"
+                className="rounded-xl px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-100"
+                onClick={() => setOpen(false)}
+              >
+                Eventos Sociais
+              </Link>
+              
+              <Link
+                to="/contato"
+                className="rounded-xl px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-100"
+                onClick={() => setOpen(false)}
+              >
+                Contato
+              </Link>
+
+              <a
+                href={JORNALZINHO_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2 text-base font-semibold text-white shadow hover:bg-emerald-500"
+                onClick={() => setOpen(false)}
+              >
+                <Newspaper className="h-4 w-4" /> Jornalzinho
+                <ExternalLink className="h-4 w-4" />
+              </a>
+            </nav>
+          </div>
+        )}
       </Container>
     </header>
   );

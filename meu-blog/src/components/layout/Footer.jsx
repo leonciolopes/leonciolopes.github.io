@@ -8,20 +8,17 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="mt-16 border-t border-slate-200 bg-slate-50 py-8 relative">
-  {/* Logo positioned similarly to header (absolute relative to footer) */}
-  <div className="absolute left-10 top-4 z-50 flex items-center gap-2">
-        <img
-          src={LOGO_SRC_BLACK}
-          alt="Logomarca Leoncio Lopes"
-          className="h-11 md:h-12 w-auto object-contain"
-        />
-        <div className="sr-only text-sm font-bold text-slate-900">{LOGO_TEXT}</div>
-      </div>
-
+    <footer className="mt-16 border-t border-slate-200 bg-slate-50">
       <Container>
-        {/* Centered copyright text */}
-        <div className="flex items-center justify-center">
+        <div className="flex flex-col items-center justify-between gap-4 py-8 md:flex-row">
+          <div className="flex items-center gap-4">
+            <img
+              src={LOGO_SRC_BLACK}
+              alt="Logomarca Leoncio Lopes"
+              className="h-10 w-auto object-contain md:h-12"
+            />
+          </div>
+          
           <div className="text-xs text-slate-600">
             © {new Date().getFullYear()} - Todos os direitos reservados.
           </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Calendar, ExternalLink, Users, Package, ChevronDown, ChevronUp } from "lucide-react";
+import formatDateLocal from "../utils/formatDate.js";
 import { Link } from "react-router-dom";
 import Container from "../components/ui/Container";
 import PageTitle from "../components/ui/PageTitle";
@@ -30,7 +31,7 @@ export default function EventosPage() {
                   <h4 className="text-base font-semibold text-slate-900">
                     {e.title}
                   </h4>
-                  <Badge>{new Date(e.date).toLocaleDateString()}</Badge>
+                  <Badge>{formatDateLocal(e.date)}</Badge>
                 </div>
                 <div className="mt-1 mb-2 text-xs text-slate-600">
                   Local: {e.local}

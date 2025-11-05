@@ -13,7 +13,7 @@ import Container from "../components/ui/Container.jsx";
 import Card from "../components/ui/Card.jsx";
 import PageTitle from "../components/ui/PageTitle.jsx";
 
-import fotoLeoncio from "../assets/img/foto-leoncio.png";
+import fotoLeoncio from "../assets/img/logos/foto-leoncio.png";
 
 // Importa automaticamente todas as imagens da pasta galeria
 // Coloque suas imagens em: src/assets/img/galeria

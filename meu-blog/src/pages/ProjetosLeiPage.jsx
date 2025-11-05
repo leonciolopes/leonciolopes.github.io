@@ -11,6 +11,7 @@ import PagedList from "../components/ui/PagedList.jsx";
 
 import useFilteredPosts from "../hooks/useFilteredPosts.js";
 import { projetosLeiData } from "../data/projetosLeiData.js";
+import formatDateLocal from "../utils/formatDate.js";
 
 export default function ProjetosLeiPage() {
   const f = useFilteredPosts(projetosLeiData);
@@ -38,7 +39,7 @@ export default function ProjetosLeiPage() {
                   <Badge>{item.category}</Badge>
                 </div>
                 <div className="mt-1 text-xs text-slate-600">
-                  Publicado em {new Date(item.publishDate).toLocaleDateString()}
+                  Publicado em {formatDateLocal(item.publishDate)}
                 </div>
                 <p className="mt-2 text-sm text-slate-700">{item.excerpt}</p>
                 <div className="mt-auto pt-3">
