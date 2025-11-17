@@ -12,20 +12,36 @@ import {
 import Container from "../components/ui/Container.jsx";
 import Card from "../components/ui/Card.jsx";
 import PageTitle from "../components/ui/PageTitle.jsx";
+import ImageWithCaption from "../components/ui/ImageWithCaption";
 
 import fotoLeoncio from "../assets/img/logos/foto-leoncio.png";
 
-// Importa automaticamente todas as imagens da pasta galeria
+// Importa automaticamente apenas as imagens da pasta galeria
 // Coloque suas imagens em: src/assets/img/galeria
 const galleryImports = import.meta.glob(
-  "../assets/img/**/*.{jpg,jpeg,png,webp}",
+  "../assets/img/galeria/*.{jpg,jpeg,png,webp}",
   { eager: true, import: "default" }
 );
 
-// Converte o objeto de imports para um array de URLs (e ordena pelo nome do arquivo)
-const galleryImages = Object.entries(galleryImports)
-  .sort(([a], [b]) => a.localeCompare(b))
-  .map(([, url]) => url);
+// Array de imagens da galeria com legendas personalizadas
+const galleryImages = [
+  {
+    src: galleryImports["../assets/img/galeria/galeria-1.png"],
+    caption: "Encontro com o deputado federal Nikolas Ferreira"
+  },
+  {
+    src: galleryImports["../assets/img/galeria/galeria-2.jpeg"],
+    caption: "Ação social no Campo do Bariri em Sete Lagoas"
+  },
+  {
+    src: galleryImports["../assets/img/galeria/galeria-3.jpeg"],
+    caption: "Participação da sessão legislativa na reunião do Plenário"
+  },
+  {
+    src: galleryImports["../assets/img/galeria/galeria-4.jpeg"],
+    caption: "Discurso na Tribuna da Câmara Municipal de Sete Lagoas"
+  }
+];
 
 export default function SobrePage() {
   const valores = [
@@ -69,19 +85,17 @@ export default function SobrePage() {
         <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-5">
           <div className="md:col-span-2">
             <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow">
-              <img
+              <ImageWithCaption
                 src={fotoLeoncio}
                 alt="Foto do vereador Leôncio Lopes"
-                className="h-full w-full object-cover"
+                caption="Vereador Leôncio Lopes"
               />
             </div>
           </div>
 
           <div className="md:col-span-3">
             <Card>
-              <h3 className="text-lg font-semibold text-slate-900">
-                Mini biografia
-              </h3>
+              <h3 className="text-lg font-semibold text-slate-900">Mini biografia</h3>
               <p
                 className="mt-2 text-sm leading-relaxed text-slate-700 text-justify"
                 style={{ textAlign: "justify" }}
@@ -103,7 +117,7 @@ export default function SobrePage() {
                 responsabilidade.
                 <br />
                 <br />
-                No <strong>Legislativo municipal</strong>, Leôncio atua com foco na valorização do
+                No <strong>Legislativo Municipal</strong>, Leôncio atua com foco na valorização do
                 trabalho, no incentivo ao empreendedorismo, na defesa da transparência e na
                 promoção de políticas públicas que fortaleçam a qualidade de vida e o
                 desenvolvimento sustentável. Seu mandato tem como pilares a proximidade com a
@@ -157,17 +171,14 @@ export default function SobrePage() {
               Galeria
             </h3>
             <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-              {galleryImages.map((src, idx) => (
-                <div
-                  key={src + idx}
-                  className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow"
-                >
-                  <img
-                    src={src}
-                    alt={`Foto ${idx + 1}`}
-                    className="h-full w-full object-cover transition hover:scale-105"
-                  />
-                </div>
+              {galleryImages.map((g, idx) => (
+                <ImageWithCaption
+                  key={g.src + idx}
+                  src={g.src}
+                  alt={g.caption || `Foto ${idx + 1}`}
+                  caption={g.caption}
+                  className="transition-transform hover:scale-105"
+                />
               ))}
             </div>
           </div>

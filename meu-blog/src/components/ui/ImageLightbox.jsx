@@ -39,6 +39,15 @@ export default function ImageLightbox({ images, onClose }) {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [onClose]);
 
+  // Resolve item shape (string or { src, caption })
+  const currentItem = images && images[currentIndex] ? images[currentIndex] : null;
+  const currentSrc = currentItem
+    ? typeof currentItem === "string"
+      ? currentItem
+      : currentItem.src
+    : "";
+  const currentCaption = currentItem && typeof currentItem !== "string" ? currentItem.caption : "";
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
@@ -46,11 +55,15 @@ export default function ImageLightbox({ images, onClose }) {
     >
       <div className="relative max-h-[90vh] max-w-[90vw]">
         <img
-          src={images[currentIndex]}
-          alt={`Foto ${currentIndex + 1}`}
-          className="max-h-[90vh] max-w-[90vw] object-contain"
+          src={currentSrc}
+          alt={currentCaption || `Foto ${currentIndex + 1}`}
+          className="max-h-[70vh] max-w-[90vw] object-contain"
         />
-        
+
+        {currentCaption && (
+          <div className="mt-2 text-center text-sm text-slate-200">{currentCaption}</div>
+        )}
+
         <button
           onClick={onClose}
           className="absolute -right-4 -top-4 rounded-full bg-white p-2 text-black shadow-lg hover:bg-gray-100"

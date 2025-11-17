@@ -147,33 +147,39 @@ export const eventosData = [
     local: "Câmara Municipal de Sete Lagoas",
     summary: "Audiência aberta para debater questões do mercado imobiliário local com participação da comunidade.",
     details:
-      "Audiência Pública realizada no Plenário da Câmara Municipal para discutir os desafios e oportunidades do mercado imobiliário em Sete Lagoas. O evento reuniu especialistas, representantes do poder público e da sociedade civil para debater temas como regularização fundiária, planejamento urbano e políticas habitacionais.",
+      "Audiência Pública realizada no Plenário da Câmara Municipal de Sete Lagoas para discutir os desafios e oportunidades do mercado imobiliário em Sete Lagoas. O evento reuniu especialistas, representantes do poder público e da sociedade civil para debater desafios e soluções do mercado imobiliário no município de Sete Lagoas.",
     photos: [
-      "https://images.unsplash.com/photo-1577412647305-991150c7d163?w=800&auto=format", // Plenário
-      "https://images.unsplash.com/photo-1573167243872-43c6433b9d40?w=800&auto=format", // Pessoas em reunião
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&auto=format", // Debate
-      "https://images.unsplash.com/photo-1552581234-26160f608093?w=800&auto=format"  // Participantes
+      { src: new URL("../assets/img/audiencia-mercado-imobiliario/1.jpeg", import.meta.url).href, caption: "Abertura do evento com Vereador Leôncio Lopes" },
+      { src: new URL("../assets/img/audiencia-mercado-imobiliario/2.jpeg", import.meta.url).href, caption: "Painel de especialistas em mercado imobiliário" },
+      { src: new URL("../assets/img/audiencia-mercado-imobiliario/3.jpeg", import.meta.url).href, caption: "Apresentação sobre desafios tributários" },
+      { src: new URL("../assets/img/audiencia-mercado-imobiliario/4.jpeg", import.meta.url).href, caption: "Discussão de impasses nas demandas imobiliárias" },
+      { src: new URL("../assets/img/audiencia-mercado-imobiliario/5.jpeg", import.meta.url).href, caption: "Realidade das imobiliárias em Sete Lagoas" },
+      { src: new URL("../assets/img/audiencia-mercado-imobiliario/6.jpeg", import.meta.url).href, caption: "Regularização fundiária urbana - cenário atual" },
+      { src: new URL("../assets/img/audiencia-mercado-imobiliario/7.jpeg", import.meta.url).href, caption: "Desenvolvimento sustentável e valorização imobiliária" },
+      { src: new URL("../assets/img/audiencia-mercado-imobiliario/8.jpeg", import.meta.url).href, caption: "Participantes acompanhando o debate" },
+      { src: new URL("../assets/img/audiencia-mercado-imobiliario/9.jpeg", import.meta.url).href, caption: "Público durante a audiência pública" },
+      { src: new URL("../assets/img/audiencia-mercado-imobiliario/10.jpeg", import.meta.url).href, caption: "Encerramento e questionamentos do público" }
     ],
     schedule: [
-      { time: "14:00", activity: "Credenciamento" },
-      { time: "14:30", activity: "Abertura oficial - Presidente da Câmara" },
-      { time: "15:00", activity: "Painel 1: Cenário atual do mercado imobiliário em Sete Lagoas" },
-      { time: "15:45", activity: "Painel 2: Desafios da regularização fundiária" },
-      { time: "16:30", activity: "Intervalo" },
-      { time: "16:45", activity: "Painel 3: Propostas e soluções" },
-      { time: "17:30", activity: "Debates e perguntas do público" },
-      { time: "18:30", activity: "Encerramento e encaminhamentos" }
+      { time: "18:30", activity: "Recepção e Credenciamento" },
+      { time: "19:00", activity: "Abertura pelo Cerimonial e Apresentação dos Palestrantes" },
+      { time: "19:05", activity: "Vereador Leôncio Lopes: Abertura do Tema e Contextualização de sua Importância no Município de Sete Lagoas." },
+      { time: "19:15", activity: "Dr. Leandro Alves da Costa: Desafios Tributários no Mercado Imobiliário - A Base de Cálculo do ITBI e Outras Controvérsias em Sete Lagoas." },
+      { time: "19:45", activity: "Dra. Lorena Figueiredo: Impasses nas Demandas Extrajudiciais Imobiliárias em Sete Lagoas - Obstáculos Práticos e Propostas de Solução." },
+      { time: "20:15", activity: "Jean Karllo: A Realidade das Imobiliárias em Sete Lagoas - Barreiras Operacionais e Perspectivas de Desenvolvimento." },
+      { time: "20:45", activity: "Dr. José Antônio: Regularização Fundiária Urbana em Sete Lagoas - Cenário Atual, Desafios Jurídicos e Caminhos Possíveis." },
+      { time: "21:15", activity: "José Valadares Bahia: Desenvolvimento Sustentável e Valorização Imobiliária - Caminhos para um Crescimento Ordenado em Sete Lagoas" },
+      { time: "21:45", activity: "Encerramento" }
     ],
     participants: [
-      "João Silva - Presidente da Câmara Municipal",
-      "Maria Santos - Secretária Municipal de Desenvolvimento Urbano",
-      "Dr. Pedro Oliveira - Presidente do CRECI-MG",
-      "Eng. Ana Costa - Conselho de Arquitetura e Urbanismo",
-      "Roberto Almeida - Associação dos Moradores",
-      "Dra. Carla Mendes - Defensoria Pública",
-      "Lucas Ferreira - Sindicato da Construção Civil"
+      "Leôncio Lopes - Vereador do município de Sete Lagoas",
+      "Dr. Leandro Alves da Costa - Advogado Especialista no Ramo Imobiliário",
+      "Dra. Lorena Figueiredo - Presidente da Comissão de Direito Imobiliário da OAB Sete Lagoas",
+      "Jean Karllo - Empresário Corretor de Imóveis",
+      "Dr. José Antônio - Advogado Especialista em Processos de Regularização Fundiária",
+      "José Valadares Bahia - Secretário do Meio Ambiente",
     ],
-    attendees: 150,
-    attendeesText: "Mais de 150 participantes"
+    attendees: 50,
+    attendeesText: "Mais de 50 participantes"
   },
 ];

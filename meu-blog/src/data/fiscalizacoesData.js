@@ -1,4 +1,16 @@
 // src/data/fiscalizacoesData.js
+// Resolve local gallery assets (se existirem) para URLs processadas pelo Vite
+const galleryImports = import.meta.glob(
+  "../assets/img/galeria/*.{jpg,jpeg,png,webp}",
+  { eager: true, import: "default" }
+);
+
+function resolveGallery(name) {
+  const entries = Object.values(galleryImports);
+  const match = entries.find((u) => String(u).includes(name));
+  return match || name;
+}
+
 export const fiscalizacoesData = [
   {
     id: "f1",
@@ -20,10 +32,10 @@ export const fiscalizacoesData = [
     Durante a vistoria, foram identificados alguns pontos que precisam de atenção
     e já foram encaminhados à Secretaria de Obras.`,
     photos: [
-      "galeria-1.png",
-      "galeria-2.jpeg",
-      "galeria-3.jpeg",
-      "galeria-4.jpeg"
+      resolveGallery("galeria-1.png"),
+      resolveGallery("galeria-2.jpeg"),
+      resolveGallery("galeria-3.jpeg"),
+      resolveGallery("galeria-4.jpeg"),
     ],
     findings: [
       "Atraso de 15 dias no cronograma",
@@ -61,10 +73,10 @@ export const fiscalizacoesData = [
     Foram identificadas necessidades de manutenção em algumas unidades e já está
     sendo elaborado um relatório detalhado para encaminhamento à Secretaria de Educação.`,
     photos: [
-      "galeria-1.png",
-      "galeria-2.jpeg",
-      "galeria-3.jpeg", 
-      "galeria-4.jpeg"
+      resolveGallery("galeria-1.png"),
+      resolveGallery("galeria-2.jpeg"),
+      resolveGallery("galeria-3.jpeg"),
+      resolveGallery("galeria-4.jpeg"),
     ],
     findings: [
       "Infiltrações em duas escolas",

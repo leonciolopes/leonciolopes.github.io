@@ -6,6 +6,7 @@ import PageTitle from "../components/ui/PageTitle";
 import Card from "../components/ui/Card";
 import Badge from "../components/ui/Badge";
 import ImageLightbox from "../components/ui/ImageLightbox";
+import ImageWithCaption from "../components/ui/ImageWithCaption";
 import { fiscalizacoesData } from "../data/fiscalizacoesData.js";
 import formatDateLocal from "../utils/formatDate.js";
 
@@ -68,23 +69,30 @@ export default function FiscalizacaoDetalhe() {
                     Registro Fotográfico
                   </h4>
                   <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
-                    {fiscalizacao.photos.map((src, idx) => (
-                      <div
-                        key={idx}
-                        className="group relative cursor-pointer overflow-hidden rounded-lg bg-slate-50"
-                        onClick={() => {
-                          setSelectedImageIndex(idx);
-                          setLightboxOpen(true);
-                        }}
-                      >
-                        <img
-                          src={src}
-                          alt={`Foto ${idx + 1} da fiscalização`}
-                          className="h-40 w-full object-cover transition-transform duration-200 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20" />
-                      </div>
-                    ))}
+                    {fiscalizacao.photos.map((src, idx) => {
+                      const parts = String(src).split("/");
+                      const filename = parts[parts.length - 1] || "";
+                      const name = filename.split("?")[0].split(".")[0] || filename;
+                      const caption = name.replace(/[-_]+/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
+                      return (
+                        <div
+                          key={idx}
+                          className="group relative cursor-pointer overflow-hidden rounded-lg bg-slate-50"
+                          onClick={() => {
+                            setSelectedImageIndex(idx);
+                            setLightboxOpen(true);
+                          }}
+                        >
+                          <ImageWithCaption
+                            src={src}
+                            alt={`Foto ${idx + 1} da fiscalização`}
+                            caption={caption}
+                            className="h-40 w-full"
+                          />
+                          <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20" />
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               )}
@@ -142,7 +150,13 @@ export default function FiscalizacaoDetalhe() {
         {/* Lightbox para as fotos */}
         {lightboxOpen && fiscalizacao?.photos && (
           <ImageLightbox
-            images={fiscalizacao.photos}
+            images={fiscalizacao.photos.map((s) => {
+              const parts = String(s).split("/");
+              const filename = parts[parts.length - 1] || "";
+              const name = filename.split("?")[0].split(".")[0] || filename;
+              const caption = name.replace(/[-_]+/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
+              return { src: s, caption };
+            })}
             onClose={() => setLightboxOpen(false)}
           />
         )}

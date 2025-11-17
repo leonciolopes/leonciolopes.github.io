@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Calendar, Users, Package } from "lucide-react";
 import ImageLightbox from "../components/ui/ImageLightbox";
+import ImageWithCaption from "../components/ui/ImageWithCaption";
 import formatDateLocal from "../utils/formatDate.js";
 import Container from "../components/ui/Container";
 import PageTitle from "../components/ui/PageTitle";
@@ -42,37 +43,66 @@ export default function EventoDetalhe() {
                     Fotos
                   </h3>
                   <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-3">
-                    {evento.photos.map((src, idx) => (
-                      <div 
-                        key={idx} 
-                        className="group relative overflow-hidden rounded-lg bg-slate-50 cursor-pointer"
-                        onClick={() => {
-                          setSelectedImageIndex(idx);
-                          setLightboxOpen(true);
-                        }}
-                      >
-                        {src ? (
-                          <>
-                            <img
-                              src={src}
-                              alt={`${evento.title} foto ${idx + 1}`}
-                              className="h-40 w-full object-cover transition-transform duration-200 group-hover:scale-105"
-                            />
-                            <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20" />
-                          </>
-                        ) : (
-                          <div className="flex h-40 items-center justify-center text-sm text-slate-400">
-                            Sem imagem
-                          </div>
-                        )}
-                      </div>
-                    ))}
+                    {evento.photos.map((photo, idx) => {
+                      // Suporte para objeto { src, caption } ou string
+                      const src = typeof photo === "string" ? photo : photo.src;
+                      const photoCaption = typeof photo === "string" ? null : photo.caption;
+                      
+                      // Se não houver caption customizado, deriva do nome do arquivo
+                      let derivedCaption = photoCaption;
+                      if (!derivedCaption && src) {
+                        const parts = String(src).split("/");
+                        const filename = parts[parts.length - 1] || "";
+                        const name = filename.split("?")[0].split(".")[0] || filename;
+                        derivedCaption = name.replace(/[-_]+/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
+                      }
+                      
+                      return (
+                        <div
+                          key={idx}
+                          className="group relative cursor-pointer overflow-hidden rounded-lg bg-slate-50"
+                          onClick={() => {
+                            setSelectedImageIndex(idx);
+                            setLightboxOpen(true);
+                          }}
+                        >
+                          {src ? (
+                            <>
+                              <ImageWithCaption
+                                src={src}
+                                alt={`${evento.title} foto ${idx + 1}`}
+                                caption={derivedCaption}
+                                className="h-40"
+                              />
+                              <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20" />
+                            </>
+                          ) : (
+                            <div className="flex h-40 items-center justify-center text-sm text-slate-400">
+                              Sem imagem
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
                   
                   {/* Lightbox */}
                   {lightboxOpen && evento.photos && (
                     <ImageLightbox
-                      images={evento.photos}
+                      images={evento.photos.map((photo) => {
+                        const src = typeof photo === "string" ? photo : photo.src;
+                        const photoCaption = typeof photo === "string" ? null : photo.caption;
+                        
+                        let derivedCaption = photoCaption;
+                        if (!derivedCaption && src) {
+                          const parts = String(src).split("/");
+                          const filename = parts[parts.length - 1] || "";
+                          const name = filename.split("?")[0].split(".")[0] || filename;
+                          derivedCaption = name.replace(/[-_]+/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
+                        }
+                        
+                        return { src, caption: derivedCaption };
+                      })}
                       onClose={() => setLightboxOpen(false)}
                     />
                   )}
