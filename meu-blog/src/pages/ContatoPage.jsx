@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import Container from "../components/ui/Container";
 import Card from "../components/ui/Card";
 import PageTitle from "../components/ui/PageTitle";
@@ -15,6 +16,10 @@ import { OFFICE_ADDRESS, WHATSAPP_NUMBER, OFFICE_PLUS_CODE } from "../data/const
 export default function ContatoPage() {
   return (
     <div className="py-10">
+      <Helmet>
+        <title>Contato - Vereador Leôncio Lopes</title>
+        <meta name="description" content="Entre em contato com o Vereador Leôncio Lopes: endereço do gabinete, telefone, WhatsApp, Instagram e email. Estamos prontos para atender a população de Sete Lagoas." />
+      </Helmet>
       <Container>
         <PageTitle icon={Phone} title="Contato" subtitle="Fale com a equipe" />
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">

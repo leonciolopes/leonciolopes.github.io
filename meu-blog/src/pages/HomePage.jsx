@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import {
   User,
   Layers,
@@ -42,6 +43,10 @@ export default function HomePage() {
 
   return (
     <div className="py-10">
+      <Helmet>
+        <title>Vereador Leôncio Lopes | Mandato em Sete Lagoas - MG</title>
+        <meta name="description" content="Acompanhe o trabalho do Vereador Leôncio Lopes em Sete Lagoas: pautas, projetos de lei, fiscalizações, eventos sociais e realizações do mandato. Transparência e compromisso com a população." />
+      </Helmet>
       <Container>
         <div className="mb-10 rounded-3xl bg-gradient-to-br from-blue-700 to-blue-500 p-8 text-white shadow-lg">
           <h1 className="text-3xl font-bold">Bem-vindo(a) ao {LOGO_TEXT}</h1>

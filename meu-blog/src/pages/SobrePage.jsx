@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import {
   User,
   HeartHandshake,
@@ -75,6 +76,10 @@ export default function SobrePage() {
 
   return (
     <div className="py-10">
+      <Helmet>
+        <title>Sobre - Vereador Leôncio Lopes</title>
+        <meta name="description" content="Conheça a trajetória, princípios e valores que orientam o trabalho do Vereador Leôncio Lopes: transparência, empatia, responsabilidade e compromisso com Sete Lagoas." />
+      </Helmet>
       <Container>
         <PageTitle
           icon={User}
@@ -89,6 +94,7 @@ export default function SobrePage() {
                 src={fotoLeoncio}
                 alt="Foto do vereador Leôncio Lopes"
                 caption="Vereador Leôncio Lopes"
+                loading="eager"
               />
             </div>
           </div>

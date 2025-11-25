@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { Layers, FileText, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import Container from "../components/ui/Container";
@@ -13,6 +14,10 @@ import { fiscalizacoesData } from "../data/fiscalizacoesData.js";
 export default function MandatoPage() {
   return (
     <div className="py-10">
+      <Helmet>
+        <title>Mandato - Vereador Leôncio Lopes</title>
+        <meta name="description" content="Acompanhe as ações do mandato: pautas defendidas, projetos de lei propostos e fiscalizações realizadas pelo Vereador Leôncio Lopes em Sete Lagoas." />
+      </Helmet>
       <Container>
         <PageTitle
           icon={Layers}

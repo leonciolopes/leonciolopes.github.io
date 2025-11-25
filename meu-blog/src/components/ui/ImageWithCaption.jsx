@@ -1,11 +1,12 @@
 import React from "react";
 
-export default function ImageWithCaption({ src, alt = "", caption = "", className = "", onClick }) {
+export default function ImageWithCaption({ src, alt = "", caption = "", className = "", onClick, loading = "lazy" }) {
   return (
     <figure className={`relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow ${className}`}>
       <img
         src={src}
         alt={alt}
+        loading={loading}
         className="w-full h-full object-cover cursor-pointer block"
         onClick={onClick}
       />

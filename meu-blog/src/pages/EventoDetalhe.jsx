@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Calendar, Users, Package } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import ImageLightbox from "../components/ui/ImageLightbox";
 import ImageWithCaption from "../components/ui/ImageWithCaption";
 import formatDateLocal from "../utils/formatDate.js";
@@ -16,8 +17,57 @@ export default function EventoDetalhe() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
+  // Gerar JSON-LD para evento
+  const generateEventJsonLd = () => {
+    if (!evento) return null;
+    
+    const eventSchema = {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": evento.title,
+      "description": evento.details || evento.summary,
+      "startDate": evento.date,
+      "location": {
+        "@type": "Place",
+        "name": evento.local,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sete Lagoas",
+          "addressRegion": "MG",
+          "addressCountry": "BR"
+        }
+      },
+      "organizer": {
+        "@type": "Person",
+        "name": "Leôncio Lopes",
+        "jobTitle": "Vereador"
+      },
+      "eventStatus": "https://schema.org/EventScheduled"
+    };
+
+    if (evento.attendees) {
+      eventSchema.attendanceMode = "https://schema.org/OfflineEventAttendanceMode";
+    }
+
+    if (evento.photos && evento.photos.length > 0) {
+      const firstPhoto = typeof evento.photos[0] === "string" ? evento.photos[0] : evento.photos[0].src;
+      eventSchema.image = firstPhoto;
+    }
+
+    return eventSchema;
+  };
+
   return (
     <div className="py-10">
+      {evento && (
+        <Helmet>
+          <title>{evento.title} - Vereador Leôncio Lopes</title>
+          <meta name="description" content={evento.summary || evento.details} />
+          <script type="application/ld+json">
+            {JSON.stringify(generateEventJsonLd())}
+          </script>
+        </Helmet>
+      )}
       <Container>
         <PageTitle
           icon={Calendar}
