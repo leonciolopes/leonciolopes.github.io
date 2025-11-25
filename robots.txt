@@ -1,0 +1,7 @@
+# robots.txt for https://leonciolopes2528.github.io/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://leonciolopes2528.github.io/sitemap.xml
