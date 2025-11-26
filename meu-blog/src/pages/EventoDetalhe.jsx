@@ -83,7 +83,7 @@ export default function EventoDetalhe() {
                 </div>
                 <div>Data: {formatDateLocal(evento.date)}</div>
                 <div>Local: {evento.local}</div>
-                <p className="pt-2">{evento.details || evento.summary}</p>
+                <div className="pt-2 whitespace-pre-line">{evento.details || evento.summary}</div>
               </div>
 
               {/* Fotos do evento (se houver) */}
@@ -94,8 +94,8 @@ export default function EventoDetalhe() {
                   </h3>
                   <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-3">
                     {evento.photos.map((photo, idx) => {
-                      // Suporte para objeto { src, caption } ou string
-                      const src = typeof photo === "string" ? photo : photo.src;
+                      // Suporte para objeto { url, caption } ou { src, caption } ou string
+                      const src = typeof photo === "string" ? photo : (photo.url || photo.src);
                       const photoCaption = typeof photo === "string" ? null : photo.caption;
                       
                       // Se não houver caption customizado, deriva do nome do arquivo
@@ -140,7 +140,7 @@ export default function EventoDetalhe() {
                   {lightboxOpen && evento.photos && (
                     <ImageLightbox
                       images={evento.photos.map((photo) => {
-                        const src = typeof photo === "string" ? photo : photo.src;
+                        const src = typeof photo === "string" ? photo : (photo.url || photo.src);
                         const photoCaption = typeof photo === "string" ? null : photo.caption;
                         
                         let derivedCaption = photoCaption;
@@ -168,6 +168,21 @@ export default function EventoDetalhe() {
                       <li key={i} className="flex items-start gap-3">
                         <div className="w-20 text-sm font-medium text-slate-800">{item.time}</div>
                         <div className="flex-1">{item.activity}</div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Empresários Homenageados */}
+              {evento.honorees && evento.honorees.length > 0 && (
+                <div className="mt-6">
+                  <h3 className="text-base font-semibold text-slate-900">Empresários Homenageados</h3>
+                  <ul className="mt-3 space-y-1 text-sm text-slate-700">
+                    {evento.honorees.map((h, i) => (
+                      <li key={i} className="flex items-start">
+                        <span className="mr-2 text-blue-600">•</span>
+                        <span>{h}</span>
                       </li>
                     ))}
                   </ul>

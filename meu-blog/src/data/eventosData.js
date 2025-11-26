@@ -1,4 +1,17 @@
 // src/data/eventosData.js
+
+// Resolve imagens da pasta sessao-solene-homenagem-empresarios
+const sessaoSoleneImports = import.meta.glob(
+  "../assets/img/sessao-solene-homenagem-empresarios/*.{jpg,jpeg,png,webp}",
+  { eager: true, import: "default" }
+);
+
+function resolveSessaoSoleneImg(name) {
+  const entries = Object.entries(sessaoSoleneImports);
+  const match = entries.find(([path]) => path.includes(name));
+  return match ? match[1] : name;
+}
+
 export const eventosData = [
   {
     // SESSÃO SOLENE EM HOMENAGEM AOS EMPRESÁRIOS
@@ -6,17 +19,27 @@ export const eventosData = [
     title: "Sessão Solene em Homenagem aos Empresários de Sete Lagoas",
     date: "2025-11-19",
     local: "Plenário da Câmara Municipal de Sete Lagoas",
-    summary: "Homenagem a empresários que impulsionam o desenvolvimento econômico e social de Sete Lagoas, reconhecendo sua contribuição na geração de empregos e fortalecimento da economia local.",
-    details: `Sessão Solene proposta pelo Vereador Leôncio Lopes (Mobiliza) para reconhecer empresários que atuam no município e contribuem de forma significativa para o crescimento econômico e social da cidade.
+    summary: "A Câmara Municipal de Sete Lagoas realizou uma Sessão Solene em reconhecimento aos empresários que atuam no município e contribuem de forma significativa para o crescimento econômico e social da cidade.",
+    details: `A Câmara Municipal de Sete Lagoas realizou, na última quarta-feira (19), uma Sessão Solene em reconhecimento aos empresários que atuam no município e contribuem de forma significativa para o crescimento econômico e social da cidade. A iniciativa foi proposta pelo vereador Leôncio Lopes (Mobiliza), que presidiu a mesa de honra e conduziu a homenagem. Também compôs a mesa o vereador Deyvison da Acolher Saúde (Solidariedade).
 
-    Durante o evento, foram homenageados 26 empresários de diversos setores, destacando a importância da valorização do empreendedorismo local. O vereador ressaltou que "empresários são força motriz, geram empregos, movimentam a economia, arrecadam impostos. Uma cidade próspera precisa de empresários."
+Durante o pronunciamento, o proponente destacou a importância da valorização do setor empresarial:
 
-    A cerimônia contou também com a participação do Vereador Deyvison da Acolher Saúde (Solidariedade), que destacou os desafios enfrentados diariamente pelo setor empresarial.
+"O objetivo hoje é valorizar os empresários da cidade. Não pudemos convidar todos, mas outras solenidades serão realizadas, porque Sete Lagoas tem muitos empresários que merecem reconhecimento. A principal mensagem é agradecer e reforçar que eles são essenciais para o desenvolvimento local. Empresários são força motriz, geram empregos, movimentam a economia, arrecadam impostos. Uma cidade próspera precisa de empresários. Quanto mais empreendedores tivermos, maior será o desenvolvimento e a distribuição de renda", afirmou o vereador Leôncio Lopes (Mobiliza).
 
-    Representando os homenageados, o empresário Aluisio Barbosa Jr. agradeceu a iniciativa e ressaltou a importância da parceria entre o setor produtivo e o Poder Legislativo.`,
-    photos: [],
+O vereador Deyvison da Acolher Saúde (Solidariedade), que também é empresário, ressaltou os desafios e a importância do setor:
+
+"Ser empresário hoje é enfrentar, diariamente, verdadeiros desafios. É preciso ter habilidade, gestão eficiente, disciplina e um planejamento financeiro muito rigoroso para cumprir todas as responsabilidades, especialmente no fim do mês, quando chegam diversos impostos e quando muitos colaboradores dependem da força do empresariado. Também é fundamental manter firmeza para continuar valorizando a mão de obra local e contribuir para a melhoria salarial em nossa cidade. Fico muito satisfeito por participar deste evento marcante, a convite de nosso colega. Estamos empenhados na defesa do setor empresarial, com várias leis tramitando e outras já aprovadas para fomentar a economia do município", destacou.`,
+    photos: [
+      { url: resolveSessaoSoleneImg("1.jpeg"), caption: "Empresários homenageados" },
+      { url: resolveSessaoSoleneImg("3.jpeg"), caption: "Vereador Leôncio Lopes e o empresário Juca Bahia" },
+      { url: resolveSessaoSoleneImg("4.jpeg"), caption: "Vereador Leôncio Lopes e a empresária Lorena Grace" },
+      { url: resolveSessaoSoleneImg("5.jpeg"), caption: "Vereador Leôncio Lopes e o empresário Jean Karllo" },
+      { url: resolveSessaoSoleneImg("6.jpeg"), caption: "Vereador Leôncio Lopes abrindo a sessão de homenagem" },
+      { url: resolveSessaoSoleneImg("7.jpeg"), caption: "" },
+      { url: resolveSessaoSoleneImg("8.jpeg"), caption: "" }
+    ],
     honorees: [
-      "Aluisio Barbosa Júnior – Diretor da Aluisio Barbosa Jr. Contabilidade; presidente da Unifemm e do Conselho da Irmandade Nossa Senhora das Graças",
+      "Aluisio Barbosa Júnior – Diretor da Aluisio Barbosa Jr. Contabilidade; presidente da Unifemm e do Conselho da Irmandade Nossa Senhora das Graças; diretor jurídico da ACI – Sete Lagoas",
       "André Solano Lacerda – Empresário do ramo imobiliário",
       "Bruna e Paulo – Fundadores da Habitus Studio Personal",
       "Bruna Vitória – Proprietária da By BV – Moda",
@@ -42,11 +65,6 @@ export const eventosData = [
       "Thiago Norte – Elétrica Norte",
       "Vagnaldo Geraldo – Gellak",
       "Victor Fonseca – Engevic Engenharia"
-    ],
-    participants: [
-      "Vereador Leôncio Lopes (Mobiliza) - Proponente e condutor da homenagem",
-      "Vereador Deyvison da Acolher Saúde (Solidariedade)",
-      "Empresários homenageados e convidados"
     ],
     externalLink: "https://www.camarasete.mg.gov.br/noticia/154",
     youtubeLink: "https://www.youtube.com/watch?v=jOUI88vh2DA"
