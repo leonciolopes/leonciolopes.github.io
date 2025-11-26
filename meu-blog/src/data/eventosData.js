@@ -31,12 +31,14 @@ O vereador Deyvison da Acolher Saúde (Solidariedade), que também é empresári
 "Ser empresário hoje é enfrentar, diariamente, verdadeiros desafios. É preciso ter habilidade, gestão eficiente, disciplina e um planejamento financeiro muito rigoroso para cumprir todas as responsabilidades, especialmente no fim do mês, quando chegam diversos impostos e quando muitos colaboradores dependem da força do empresariado. Também é fundamental manter firmeza para continuar valorizando a mão de obra local e contribuir para a melhoria salarial em nossa cidade. Fico muito satisfeito por participar deste evento marcante, a convite de nosso colega. Estamos empenhados na defesa do setor empresarial, com várias leis tramitando e outras já aprovadas para fomentar a economia do município", destacou.`,
     photos: [
       { url: resolveSessaoSoleneImg("1.jpeg"), caption: "Empresários homenageados" },
+      { url: resolveSessaoSoleneImg("2.jpeg"), caption: "Vereador Leôncio Lopes e o empresário Aluísio Barbosa Júnior" },
       { url: resolveSessaoSoleneImg("3.jpeg"), caption: "Vereador Leôncio Lopes e o empresário Juca Bahia" },
       { url: resolveSessaoSoleneImg("4.jpeg"), caption: "Vereador Leôncio Lopes e a empresária Lorena Grace" },
       { url: resolveSessaoSoleneImg("5.jpeg"), caption: "Vereador Leôncio Lopes e o empresário Jean Karllo" },
       { url: resolveSessaoSoleneImg("6.jpeg"), caption: "Vereador Leôncio Lopes abrindo a sessão de homenagem" },
-      { url: resolveSessaoSoleneImg("7.jpeg"), caption: "" },
-      { url: resolveSessaoSoleneImg("8.jpeg"), caption: "" }
+      { url: resolveSessaoSoleneImg("7.jpeg"), caption: "Vereador Leôncio Lopes e a empresária Regina Márcia" },
+      { url: resolveSessaoSoleneImg("8.jpeg"), caption: "Vereador Leôncio Lopes e o empresário Luciano Batista" },
+      { url: resolveSessaoSoleneImg("9.jpeg"), caption: "Vereador Leôncio Lopes e o empresário Leandro Alves" }
     ],
     honorees: [
       "Aluisio Barbosa Júnior – Diretor da Aluisio Barbosa Jr. Contabilidade; presidente da Unifemm e do Conselho da Irmandade Nossa Senhora das Graças; diretor jurídico da ACI – Sete Lagoas",

@@ -49,7 +49,7 @@ export default function HomePage() {
       </Helmet>
       <Container>
         <div className="mb-10 rounded-3xl bg-gradient-to-br from-blue-700 to-blue-500 p-8 text-white shadow-lg">
-          <h1 className="text-3xl font-bold">Bem-vindo(a) ao {LOGO_TEXT}</h1>
+          <h1 className="text-3xl font-bold">Bem-vindo(a) ao Mandato do Vereador Leôncio Lopes</h1>
           <p className="mt-2 max-w-2xl text-white/90">
             Transparência, proximidade e serviço ao cidadão. Explore as páginas
             abaixo para saber mais sobre o mandato e as ações em andamento.
@@ -62,6 +62,7 @@ export default function HomePage() {
               className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow hover:bg-emerald-500"
             >
               <Newspaper className="h-4 w-4" /> Acessar o Jornalzinho
+              <ExternalLink className="h-4 w-4" />
             </a>
           </div>
         </div>

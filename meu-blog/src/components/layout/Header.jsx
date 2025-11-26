@@ -7,11 +7,13 @@ import {
   Newspaper,
   ChevronDown,
   ExternalLink,
+  Briefcase,
 } from "lucide-react";
 import {
   LOGO_SRC_WHITE,
   LOGO_TEXT,
   JORNALZINHO_URL,
+  VAGAS_EMPREGO_URL,
 } from "../../data/constants";
 import Container from "../ui/Container";
 
@@ -116,6 +118,16 @@ export default function Header() {
               <Newspaper className="h-4 w-4" /> Jornalzinho
               <ExternalLink className="h-4 w-4" />
             </a>
+            
+            <a
+              href={VAGAS_EMPREGO_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="ml-2 inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2 text-base font-semibold text-white shadow hover:bg-emerald-500"
+            >
+              <Briefcase className="h-4 w-4" /> Vagas de Emprego
+              <ExternalLink className="h-4 w-4" />
+            </a>
           </nav>
 
           {/* Mobile menu button */}
@@ -203,10 +215,21 @@ export default function Header() {
                 href={JORNALZINHO_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2 text-base font-semibold text-white shadow hover:bg-emerald-500"
+                className="flex w-full items-center gap-2 rounded-xl bg-emerald-600 px-4 py-3 font-semibold text-white hover:bg-emerald-500"
                 onClick={() => setOpen(false)}
               >
                 <Newspaper className="h-4 w-4" /> Jornalzinho
+                <ExternalLink className="h-4 w-4" />
+              </a>
+              
+              <a
+                href={VAGAS_EMPREGO_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="flex w-full items-center gap-2 rounded-xl bg-emerald-600 px-4 py-3 font-semibold text-white hover:bg-emerald-500"
+                onClick={() => setOpen(false)}
+              >
+                <Briefcase className="h-4 w-4" /> Vagas de Emprego
                 <ExternalLink className="h-4 w-4" />
               </a>
             </nav>

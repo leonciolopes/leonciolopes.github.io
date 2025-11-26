@@ -8,8 +8,8 @@ export const LOGO_SRC_WHITE = logoWhite;
 export const LOGO_SRC_BLACK = logoBlack;
 
 export const WHATSAPP_NUMBER = "5531995874822";
-export const JORNALZINHO_WHATSAPP_NUMBER = "5531999999990";
-export const JORNALZINHO_URL = `https://wa.me/${JORNALZINHO_WHATSAPP_NUMBER}`;
+export const JORNALZINHO_URL = "https://chat.whatsapp.com/EIpKyUtrOLJD2r8IWI5FXS";
+export const VAGAS_EMPREGO_URL = "https://chat.whatsapp.com/F43utPn8uMnJBB9s8ajW0w?mode=hqrt3";
 
 export const OFFICE_ADDRESS =
   "R. Domingos Louverturi, 335 - São Geraldo, Sete Lagoas - MG, 35700-177 | Gabinete 218";
