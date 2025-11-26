@@ -1,6 +1,57 @@
 // src/data/eventosData.js
 export const eventosData = [
   {
+    // SESSÃO SOLENE EM HOMENAGEM AOS EMPRESÁRIOS
+    id: "e0",
+    title: "Sessão Solene em Homenagem aos Empresários de Sete Lagoas",
+    date: "2025-11-19",
+    local: "Plenário da Câmara Municipal de Sete Lagoas",
+    summary: "Homenagem a empresários que impulsionam o desenvolvimento econômico e social de Sete Lagoas, reconhecendo sua contribuição na geração de empregos e fortalecimento da economia local.",
+    details: `Sessão Solene proposta pelo Vereador Leôncio Lopes (Mobiliza) para reconhecer empresários que atuam no município e contribuem de forma significativa para o crescimento econômico e social da cidade.
+
+    Durante o evento, foram homenageados 26 empresários de diversos setores, destacando a importância da valorização do empreendedorismo local. O vereador ressaltou que "empresários são força motriz, geram empregos, movimentam a economia, arrecadam impostos. Uma cidade próspera precisa de empresários."
+
+    A cerimônia contou também com a participação do Vereador Deyvison da Acolher Saúde (Solidariedade), que destacou os desafios enfrentados diariamente pelo setor empresarial.
+
+    Representando os homenageados, o empresário Aluisio Barbosa Jr. agradeceu a iniciativa e ressaltou a importância da parceria entre o setor produtivo e o Poder Legislativo.`,
+    photos: [],
+    honorees: [
+      "Aluisio Barbosa Júnior – Diretor da Aluisio Barbosa Jr. Contabilidade; presidente da Unifemm e do Conselho da Irmandade Nossa Senhora das Graças",
+      "André Solano Lacerda – Empresário do ramo imobiliário",
+      "Bruna e Paulo – Fundadores da Habitus Studio Personal",
+      "Bruna Vitória – Proprietária da By BV – Moda",
+      "Fernando Paula Ribeiro – Engenheiro e fundador da Soma Engenharia",
+      "Frederico Magalhães – Proprietário da Pizza do Fred",
+      "Geandre Caetano – Proprietário do restaurante Apalit",
+      "Geraldo Márcio – Destak Pneus, GM Pneus e Lubrificantes e Mamoré Pneus",
+      "Cibele Almeida – Representando o Grupo Zema",
+      "Jean Karllo – JK Imóveis",
+      "Juca Bahia – Economista e empresário",
+      "Leandro Alves – Advogado imobiliário",
+      "Lorena Grace – BRS Empreendimento",
+      "Lucas Rezende – Diretor da Absolut Nutrition",
+      "Luciana Pena – Granja Barreirinho",
+      "Luciano Batista – Minas Gesso",
+      "Lúcio Brito – Akka Mitsubishi",
+      "Nilin – Grupo 2001 (Loja 2001 e Sítio 2001)",
+      "Patrícia Gandini – Utilidades da Paty",
+      "Regina Márcia – Arquiteta e urbanista",
+      "Rodrigo Vicente Ferreira – Badá Diesel",
+      "Ronaldo Alcântara – Bispo e empresário",
+      "Rosani Búfalo – Búfalo Ferramentas e Búfalo Casa e Lazer",
+      "Thiago Norte – Elétrica Norte",
+      "Vagnaldo Geraldo – Gellak",
+      "Victor Fonseca – Engevic Engenharia"
+    ],
+    participants: [
+      "Vereador Leôncio Lopes (Mobiliza) - Proponente e condutor da homenagem",
+      "Vereador Deyvison da Acolher Saúde (Solidariedade)",
+      "Empresários homenageados e convidados"
+    ],
+    externalLink: "https://www.camarasete.mg.gov.br/noticia/154",
+    youtubeLink: "https://www.youtube.com/watch?v=jOUI88vh2DA"
+  },
+  {
      // MUTIRÃO DE CONSULTAS OFTALMOLÓGICAS GRATUITAS
     id: "e1",
     title: "Mutirão de Consultas Oftalmológicas Gratuitas",

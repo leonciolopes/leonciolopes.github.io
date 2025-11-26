@@ -28,7 +28,6 @@ export default function MandatoPage() {
           <Card>
             <div className="flex h-full flex-col">
               <div className="flex items-center gap-2">
-                <Badge>Páginas</Badge>
                 <span className="text-lg font-bold text-slate-900">Pautas</span>
               </div>
               <p className="mt-2 text-sm text-slate-700">
@@ -64,7 +63,6 @@ export default function MandatoPage() {
           <Card>
             <div className="flex h-full flex-col">
               <div className="flex items-center gap-2">
-                <Badge>Páginas</Badge>
                 <span className="text-lg font-bold text-slate-900">
                   Projetos de Lei
                 </span>
@@ -101,8 +99,7 @@ export default function MandatoPage() {
           <Card>
             <div className="flex h-full flex-col">
               <div className="flex items-center gap-2">
-                <Badge>Fiscalizações</Badge>
-                <span className="text-lg font-bold text-slate-900">Fiscalizações recentes</span>
+                <span className="text-lg font-bold text-slate-900">Fiscalizações</span>
               </div>
               <p className="mt-2 text-sm text-slate-700">
                 Últimas ações de fiscalização realizadas pelo mandato.

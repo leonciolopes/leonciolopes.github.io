@@ -30,29 +30,44 @@ export default function PautasPage() {
         
         {/* Destaque das categorias principais */}
         <div className="mb-6 rounded-2xl bg-gradient-to-br from-blue-50 to-slate-50 p-6 border border-blue-100">
-          <h3 className="text-lg font-bold text-slate-900 mb-3">📋 Principais Áreas de Atuação</h3>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 text-sm">
+          <h3 className="text-lg font-bold text-slate-900 mb-3">📋 Principais Áreas de Atuação (71 pautas)</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3 text-sm">
             <div className="text-center">
               <div className="font-semibold text-blue-700">Infraestrutura</div>
-              <div className="text-xs text-slate-600">Asfalto, drenagem, saneamento</div>
+              <div className="text-xs text-slate-600">9 pautas</div>
             </div>
             <div className="text-center">
               <div className="font-semibold text-blue-700">Mobilidade</div>
-              <div className="text-xs text-slate-600">Segurança viária, semáforos</div>
+              <div className="text-xs text-slate-600">10 pautas</div>
             </div>
             <div className="text-center">
               <div className="font-semibold text-blue-700">Urbanização</div>
-              <div className="text-xs text-slate-600">Praças, iluminação, lazer</div>
+              <div className="text-xs text-slate-600">5 pautas</div>
+            </div>
+            <div className="text-center">
+              <div className="font-semibold text-blue-700">Limpeza</div>
+              <div className="text-xs text-slate-600">8 pautas</div>
             </div>
             <div className="text-center">
               <div className="font-semibold text-blue-700">Zona Rural</div>
-              <div className="text-xs text-slate-600">Estradas vicinais</div>
+              <div className="text-xs text-slate-600">7 pautas</div>
             </div>
             <div className="text-center">
-              <div className="font-semibold text-blue-700">Regularização</div>
-              <div className="text-xs text-slate-600">REURB, fiscalização</div>
+              <div className="font-semibold text-blue-700">Saúde</div>
+              <div className="text-xs text-slate-600">7 pautas</div>
+            </div>
+            <div className="text-center">
+              <div className="font-semibold text-blue-700">Educação</div>
+              <div className="text-xs text-slate-600">5 pautas</div>
+            </div>
+            <div className="text-center">
+              <div className="font-semibold text-blue-700">Mais áreas</div>
+              <div className="text-xs text-slate-600">20 pautas</div>
             </div>
           </div>
+          <p className="mt-4 text-xs text-slate-600 text-center">
+            Inclui também: Transporte, Regularização, Cultura e Esporte, Fiscalização, Articulação Política e Segurança
+          </p>
         </div>
 
         <FilterBar {...f} />
