@@ -1,6 +1,7 @@
 import React from "react";
 import { FileText, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Container from "../components/ui/Container";
 import PageTitle from "../components/ui/PageTitle";
 import Card from "../components/ui/Card";
@@ -16,12 +17,44 @@ export default function PautasPage() {
 
   return (
     <div className="py-10">
+      <Helmet>
+        <title>Pautas - Vereador Leôncio Lopes</title>
+        <meta name="description" content="Principais pautas e pedidos de providência do Vereador Leôncio Lopes: infraestrutura, mobilidade, saúde, educação, zona rural e regularização fundiária em Sete Lagoas." />
+      </Helmet>
       <Container>
         <PageTitle
           icon={FileText}
           title="Pautas"
-          subtitle="Todas as publicações"
+          subtitle="Principais demandas e pedidos de providência para Sete Lagoas"
         />
+        
+        {/* Destaque das categorias principais */}
+        <div className="mb-6 rounded-2xl bg-gradient-to-br from-blue-50 to-slate-50 p-6 border border-blue-100">
+          <h3 className="text-lg font-bold text-slate-900 mb-3">📋 Principais Áreas de Atuação</h3>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 text-sm">
+            <div className="text-center">
+              <div className="font-semibold text-blue-700">Infraestrutura</div>
+              <div className="text-xs text-slate-600">Asfalto, drenagem, saneamento</div>
+            </div>
+            <div className="text-center">
+              <div className="font-semibold text-blue-700">Mobilidade</div>
+              <div className="text-xs text-slate-600">Segurança viária, semáforos</div>
+            </div>
+            <div className="text-center">
+              <div className="font-semibold text-blue-700">Urbanização</div>
+              <div className="text-xs text-slate-600">Praças, iluminação, lazer</div>
+            </div>
+            <div className="text-center">
+              <div className="font-semibold text-blue-700">Zona Rural</div>
+              <div className="text-xs text-slate-600">Estradas vicinais</div>
+            </div>
+            <div className="text-center">
+              <div className="font-semibold text-blue-700">Regularização</div>
+              <div className="text-xs text-slate-600">REURB, fiscalização</div>
+            </div>
+          </div>
+        </div>
+
         <FilterBar {...f} />
         <PagedList
           items={f.filtered}
