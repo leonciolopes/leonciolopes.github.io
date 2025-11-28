@@ -30,8 +30,9 @@ export default function Header() {
       const NavLinkStyled = ({ to, children }) => (
     <NavLink
       to={to}
+      end
       className={({ isActive }) =>
-        `rounded-xl px-3 py-2 text-base font-medium transition hover:bg-white/20 ${
+        `rounded-xl px-2 py-2 text-base font-medium transition hover:bg-white/20 whitespace-nowrap ${
           isActive ? "bg-white/20 text-white" : "text-white"
         }`
       }
@@ -62,13 +63,13 @@ export default function Header() {
           <div className="w-32 md:w-40" />
 
           {/* Desktop nav */}
-          <nav className="hidden items-center gap-2 md:flex">
+          <nav className="hidden items-center gap-1 md:flex">
             <NavLinkStyled to="/sobre">Sobre mim</NavLinkStyled>
 
             <div className="relative">
               <button
                 onClick={() => setOpenMandato((o) => !o)}
-                className="flex items-center gap-1 rounded-xl px-3 py-2 text-base font-medium text-white hover:bg-white/20"
+                className="flex items-center gap-1 rounded-xl px-2 py-2 text-base font-medium text-white hover:bg-white/20 whitespace-nowrap"
               >
                 <Layers className="h-4 w-4" /> Mandato
                 <ChevronDown className="h-4 w-4" />
@@ -106,6 +107,7 @@ export default function Header() {
               )}
             </div>
 
+            <NavLinkStyled to="/regularizacao">Regularização</NavLinkStyled>
             <NavLinkStyled to="/eventos">Eventos Sociais</NavLinkStyled>
             <NavLinkStyled to="/contato">Contato</NavLinkStyled>
 
@@ -113,20 +115,20 @@ export default function Header() {
               href={JORNALZINHO_URL}
               target="_blank"
               rel="noreferrer"
-              className="ml-2 inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2 text-base font-semibold text-white shadow hover:bg-emerald-500"
+              className="ml-1 inline-flex items-center gap-1.5 rounded-xl bg-emerald-600 px-3 py-2 text-base font-semibold text-white shadow hover:bg-emerald-500 whitespace-nowrap"
             >
               <Newspaper className="h-4 w-4" /> Jornalzinho
-              <ExternalLink className="h-4 w-4" />
+              <ExternalLink className="h-3.5 w-3.5" />
             </a>
             
             <a
               href={VAGAS_EMPREGO_URL}
               target="_blank"
               rel="noreferrer"
-              className="ml-2 inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2 text-base font-semibold text-white shadow hover:bg-emerald-500"
+              className="ml-1 inline-flex items-center gap-1.5 rounded-xl bg-emerald-600 px-3 py-2 text-base font-semibold text-white shadow hover:bg-emerald-500 whitespace-nowrap"
             >
               <Briefcase className="h-4 w-4" /> Vagas de Emprego
-              <ExternalLink className="h-4 w-4" />
+              <ExternalLink className="h-3.5 w-3.5" />
             </a>
           </nav>
 
@@ -195,6 +197,14 @@ export default function Header() {
                 )}
               </div>
 
+              <Link
+                to="/regularizacao"
+                className="rounded-xl px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-100"
+                onClick={() => setOpen(false)}
+              >
+                Regularização
+              </Link>
+              
               <Link
                 to="/eventos"
                 className="rounded-xl px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-100"

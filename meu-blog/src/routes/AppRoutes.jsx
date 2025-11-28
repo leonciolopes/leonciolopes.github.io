@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import HomePage from "../pages/HomePage.jsx";
 import SobrePage from "../pages/SobrePage.jsx";
@@ -10,6 +10,7 @@ import EventosPage from "../pages/EventosPage.jsx";
 import EventoDetalhe from "../pages/EventoDetalhe.jsx";
 import FiscalizacoesPage from "../pages/FiscalizacoesPage.jsx";
 import FiscalizacaoDetalhe from "../pages/FiscalizacaoDetalhe.jsx";
+import RegularizacaoPage from "../pages/RegularizacaoPage.jsx";
 import ContatoPage from "../pages/ContatoPage.jsx";
 
 import PlaceholderPost from "../components/PlaceholderPost.jsx";
@@ -38,6 +39,12 @@ export default function AppRoutes() {
       {/* Eventos e Fiscalizações */}
   <Route path="/eventos" element={<EventosPage />} />
   <Route path="/eventos/:id" element={<EventoDetalhe />} />
+  
+  {/* Regularização Imobiliária */}
+  <Route path="/regularizacao" element={<RegularizacaoPage />} />
+  {/* Compat: redireciona rota antiga */}
+  <Route path="/regularizacao-imobiliaria" element={<Navigate to="/regularizacao" replace />} />
+  
   {/* Fiscalizações como subpágina de Mandato */}
   <Route path="/mandato/fiscalizacoes" element={<FiscalizacoesPage />} />
   <Route path="/mandato/fiscalizacoes/:id" element={<FiscalizacaoDetalhe />} />
