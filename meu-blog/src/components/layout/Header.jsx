@@ -116,6 +116,7 @@ export default function Header() {
               target="_blank"
               rel="noreferrer"
               className="ml-1 inline-flex items-center gap-1.5 rounded-xl bg-emerald-600 px-3 py-2 text-base font-semibold text-white shadow hover:bg-emerald-500 whitespace-nowrap"
+              title="Acesse e acompanhe nosso trabalho"
             >
               <Newspaper className="h-4 w-4" /> Jornalzinho
               <ExternalLink className="h-3.5 w-3.5" />
@@ -126,6 +127,7 @@ export default function Header() {
               target="_blank"
               rel="noreferrer"
               className="ml-1 inline-flex items-center gap-1.5 rounded-xl bg-emerald-600 px-3 py-2 text-base font-semibold text-white shadow hover:bg-emerald-500 whitespace-nowrap"
+              title="Acesse e acompanhe as vagas disponíveis"
             >
               <Briefcase className="h-4 w-4" /> Vagas de Emprego
               <ExternalLink className="h-3.5 w-3.5" />
@@ -227,6 +229,7 @@ export default function Header() {
                 rel="noreferrer"
                 className="flex w-full items-center gap-2 rounded-xl bg-emerald-600 px-4 py-3 font-semibold text-white hover:bg-emerald-500"
                 onClick={() => setOpen(false)}
+                title="Acesse e acompanhe nosso trabalho"
               >
                 <Newspaper className="h-4 w-4" /> Jornalzinho
                 <ExternalLink className="h-4 w-4" />
@@ -238,6 +241,7 @@ export default function Header() {
                 rel="noreferrer"
                 className="flex w-full items-center gap-2 rounded-xl bg-emerald-600 px-4 py-3 font-semibold text-white hover:bg-emerald-500"
                 onClick={() => setOpen(false)}
+                title="Acesse e acompanhe as vagas disponíveis"
               >
                 <Briefcase className="h-4 w-4" /> Vagas de Emprego
                 <ExternalLink className="h-4 w-4" />

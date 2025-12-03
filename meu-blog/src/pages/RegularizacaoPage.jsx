@@ -15,13 +15,10 @@ const RegularizacaoPage = () => {
   ];
 
   const bairrosIniciados = [
-    "Jardim Arizona",
-    "Bela Vista",
-    "Esperança",
-    "Progresso",
-    "Santa Helena",
-    "São Geraldo",
-    "Várzea"
+    "Cidade de Deus",
+    "Santa Felicidade",
+    "Padre Teodoro",
+    "Verde Vale"
   ];
 
   const etapasProcesso = [
@@ -53,12 +50,13 @@ const RegularizacaoPage = () => {
   ];
 
   return (
-    <Container className="py-8">
-      <PageTitle 
-        icon={FileText}
-        title="Regularização"
-        subtitle="Entenda o processo, documentos necessários e bairros atendidos"
-      />
+    <div className="py-10">
+      <Container>
+        <PageTitle 
+          icon={FileText}
+          title="Regularização"
+          subtitle="Entenda o processo, documentos necessários e bairros atendidos"
+        />
 
       {/* Introdução */}
       <Card className="mb-8">
@@ -173,7 +171,8 @@ const RegularizacaoPage = () => {
           </div>
         </div>
       </Card>
-    </Container>
+      </Container>
+    </div>
   );
 };
 
