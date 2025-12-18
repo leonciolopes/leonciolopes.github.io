@@ -164,12 +164,38 @@ export default function EventoDetalhe() {
                 <div className="mt-6">
                   <h3 className="text-base font-semibold text-slate-900">Cronograma</h3>
                   <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                    {evento.schedule.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <div className="w-20 text-sm font-medium text-slate-800">{item.time}</div>
-                        <div className="flex-1">{item.activity}</div>
-                      </li>
-                    ))}
+                    {evento.schedule.map((item, i) => {
+                      let timeStr = item.time || "";
+                      let activityStr = item.activity || "";
+                      
+                      // Se o formato for "HH:MM - Descrição"
+                      const match = timeStr.match(/^(\d{2}:\d{2})\s*-\s*(.+)$/);
+                      if (match) {
+                        timeStr = match[1];
+                        activityStr = match[2];
+                      }
+                      
+                      return (
+                        <li key={i}>
+                          {item.time && item.activity ? (
+                            <div className="flex items-start gap-3">
+                              <div className="w-20 text-sm font-medium text-slate-800">{item.time}</div>
+                              <div className="flex-1">{item.activity}</div>
+                            </div>
+                          ) : (
+                            <div>
+                              {match ? (
+                                <>
+                                  <strong>{timeStr}</strong> <strong>-</strong> {activityStr}
+                                </>
+                              ) : (
+                                <div>{item.time}</div>
+                              )}
+                            </div>
+                          )}
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               )}
@@ -193,7 +219,7 @@ export default function EventoDetalhe() {
               {evento.participants && evento.participants.length > 0 && (
                 <div className="mt-6">
                   <h3 className="text-base font-semibold text-slate-900">Participantes</h3>
-                  <ul className="mt-3 list-inside list-disc text-sm text-slate-700">
+                  <ul className="mt-3 list-inside list-disc space-y-1 text-sm text-slate-700">
                     {evento.participants.map((p, i) => (
                       <li key={i}>{p}</li>
                     ))}

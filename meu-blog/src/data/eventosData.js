@@ -113,10 +113,10 @@ O vereador Deyvison da Acolher Saúde (Solidariedade), que também é empresári
           // Exemplo: '/src/assets/img/eventos/audiencia-1.jpg'
         ],
         schedule: [
-          { time: "09:00", activity: "Abertura e boas-vindas" },
-          { time: "09:30", activity: "Painel: Desafios do mercado imobiliário" },
-          { time: "10:30", activity: "Perguntas e participação da comunidade" },
-          { time: "11:30", activity: "Encerramento" },
+          { time: "09:00 - Abertura e boas-vindas" },
+          { time: "09:30 - Painel: Desafios do mercado imobiliário" },
+          { time: "10:30 - Perguntas e participação da comunidade" },
+          { time: "11:30 - Encerramento" },
         ],
         participants: [
           "Presidente da Câmara",
@@ -252,5 +252,78 @@ O vereador Deyvison da Acolher Saúde (Solidariedade), que também é empresári
     ],
     attendees: 50,
     attendeesText: "Mais de 50 participantes"
+  },
+  
+  // AUDIÊNCIA PÚBLICA: PLC 09/2025 - Lote Social
+  {
+    id: "e3",
+    title: "Audiência Pública: PLC 09/2025 - Lote Social",
+    date: "2025-12-17",
+    local: "Plenário da Câmara Municipal de Sete Lagoas",
+    summary:
+      "Audiência pública para apresentar e debater o PLC 09/2025 (Lote Social), que altera a LC 208/2017 sobre parcelamento do solo em alinhamento ao Plano Diretor (LC 109/2006), visando ampliar o acesso à moradia para famílias de baixa renda.",
+    details: `A Audiência Pública realizada em 17/12/2025 discutiu o **Projeto de Lei Complementar nº 09/2025**, que propõe alterações na **Lei Complementar nº 208/2017** (parcelamento do solo) em consonância com o **Plano Diretor – LC nº 109/2006**.
+
+O que é o Lote Social – A sua chance da casa própria
+• Proposta apresentada pelo **Vereador Leôncio Lopes** para atualizar as normas de criação de lotes no município e abrir caminho para a moradia de quem mais precisa.
+• **Grande mudança**: reserva de parte dos novos loteamentos para criação do **Lote Social**, com **125 m²** (frente mínima de **5 m**). Atualmente, a legislação exige lotes predominantemente entre **200 e 300 m²**.
+
+Quem é beneficiado e por quê?
+• Público-alvo: **famílias de baixa renda** em busca da **primeira moradia**.
+• Com a redução da metragem, o preço estimado do lote cai **para cerca de R$ 60 mil**, enquanto os lotes padrão (200–250 m²) custam entre **R$ 150 mil e R$ 250 mil**.
+• Lotes menores resultam em **valor de entrada e parcelas compatíveis** com o orçamento familiar.
+
+Efeitos práticos na cidade
+• **Inclusão social** com acesso real ao crédito imobiliário.
+• **Fim do ciclo do aluguel**: famílias passam a construir patrimônio próprio.
+• **Crescimento urbano organizado** e justo, com regras claras e alinhadas ao Plano Diretor.
+
+Aspectos jurídicos
+• Em lotes maiores, a solução usual para construir várias casas é a **instituição de condomínio** – um processo técnico-jurídico **caro**, cujo custo acaba repassado ao comprador.
+• O **Lote Social (125 m²)** simplifica esse cenário ao **dispensar a necessidade** de múltiplas unidades no mesmo terreno, **reduzindo custos** e burocracias.
+
+Vagas de garagem e estacionamento na rua
+• Hoje, lotes de 300 m² frequentemente recebem **três casas** e **três garagens** na fachada, **eliminando** espaço de estacionamento público.
+• Com lotes de **125 m² (frente de 5 m)** e **uma garagem por lote**, fica assegurado **espaço entre um lote e outro** para estacionamento na via.
+
+Conclusão
+O **Lote Social** é mais do que uma redução de metragem: é uma **política pública de dignidade, justiça social e planejamento urbano inteligente**. Ao tornar a casa própria acessível, reduzir custos jurídicos e organizar o crescimento da cidade, o PLC 09/2025 dá um passo decisivo para transformar o **direito à moradia** em realidade em Sete Lagoas.
+
+Encaminhamento: registro das contribuições da sociedade para subsidiar o relatório e os próximos passos da tramitação do projeto.
+`,
+    photos: [
+      // Insira fotos do evento (opcional)
+      // { src: new URL("../assets/img/audiencia-plc-09-2025-lote-social/1.jpeg", import.meta.url).href, caption: "Abertura da audiência" },
+    ],
+    schedule: [
+      { time: "18:30 - Recepção e Credenciamento" },
+      { time: "19:00 - Abertura pelo Cerimonial e Apresentação dos Palestrantes" },
+      { time: "19:05 - Vereador Leôncio Lopes: Abertura do tema e contextualização de sua importância para Sete Lagoas" },
+      { time: "19:15 - Luana Aparecida – Arquiteta da Câmara Municipal de Sete Lagoas" },
+      { time: "19:25 - Cristlano Morais – Presidente da Associação do Bairro Dona Silva" },
+      { time: "19:35 - Dr. Jean Karllo – Advogado e empresário do ramo imobiliário" },
+      { time: "19:45 - Flávio Marcial – Engenheiro (Marcial Engenharia)" },
+      { time: "19:55 - Wellington Cardozo – Presidente da Associação do Bairro Cidade de Deus" },
+      { time: "20:10 - Abertura da discussão para manifestantes" },
+      { time: "21:00 - Encerramento" }
+    ],
+    participants: [
+      "Leôncio Lopes – Vereador proponente",
+      "Flávio Marcial – Engenheiro (Marcial Engenharia)",
+      "André Torres – Chefe de Governo",
+      "Dr. Frederico Newman – Procurador do Município",
+      "Antônio Maciel – Secretário de Obras",
+      "Melquisedeque Caxeado – Empresário",
+      "Sérgio Júnior – Comandante da GCM",
+      "Valéria Ferrão – Representante da OAB Sete Lagoas",
+      "Victor Fonseca – Empresário",
+      "Maria Aparecida – Secretária de Assistência Social",
+      "Robson Lacerda – Presidente da Casel",
+      "Wanderlei Mendes – Delegado da CRECI",
+      "Luana Aparecida – Arquiteta da Câmara Municipal de Sete Lagoas",
+      "Cristlano Morais – Presidente da Associação do Bairro Dona Silva",
+      "Dr. Jean Karllo – Advogado e empresário do ramo imobiliário",
+      "Wellington Cardozo – Presidente da Associação do Bairro Cidade de Deus"
+    ],
   },
 ];
