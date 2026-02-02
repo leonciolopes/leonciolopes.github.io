@@ -10,6 +10,26 @@ import formatDateLocal from "../utils/formatDate.js";
 import { pautasData } from "../data/pautasData.js";
 import { projetosLeiData } from "../data/projetosLeiData.js";
 import { fiscalizacoesData } from "../data/fiscalizacoesData.js";
+import PieChartSummary from "../components/charts/PieChartSummary.jsx";
+import { indicadoresGabinete } from "../data/indicadoresGabinete.js";
+
+const chartItems = [
+  {
+    label: "Projetos de Lei",
+    value: indicadoresGabinete.projetosDeLei,
+    color: "#2563eb",
+  },
+  {
+    label: "Pedidos de Providência",
+    value: indicadoresGabinete.pedidosProvidencia,
+    color: "#10b981",
+  },
+  {
+    label: "Ofícios",
+    value: indicadoresGabinete.oficios,
+    color: "#0f172a",
+  },
+];
 
 export default function MandatoPage() {
   return (
