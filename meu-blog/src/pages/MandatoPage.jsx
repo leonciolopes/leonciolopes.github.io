@@ -31,7 +31,7 @@ const chartItems = [
   {
     label: "Ofícios",
     value: indicadoresGabinete.oficios,
-    color: "#aeb7bd", // slate escuro (mais elegante que preto)
+    color: "#05dbfc", // slate escuro (mais elegante que preto)
   },
 ];
 
